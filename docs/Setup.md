@@ -8,6 +8,6 @@ This page contains information about the setup of the development environment
     * Open `Package Manager Console` in Visual Studio 2015
     * Select `Net.Appclusive.Core` as `Default Project`
 	* Execute `Update-Database`
-	* Execute [`Add-ApcSpecialEntities.ps1`](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/Add-ApcSpecialEntities.ps1) in PowerShell console
+	* Execute [`Add-ApcSpecialEntities.ps1`](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/Add-ApcSpecialEntities.ps1) in PowerShell console as follows
 	
 	    `.\Add-ApcSpecialEntities.ps1 -ConnectionType LocalDB`
