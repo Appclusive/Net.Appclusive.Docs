@@ -19,7 +19,9 @@ True   True   True
 | broken exactly like in
 | the source file.
 
+## Heading Level 2
 
+An here it comes ...
 
 term (up to a line of text)
    Definition of the term, which must be indented
@@ -53,7 +55,7 @@ Some paragraph
 
 	Some other paragraph...
 
-According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy :code:`var n = 42L`.
+According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy :code:`var n = 42L;` or :csharp:`var x = 5;`.
 
 Block code is formatted as this example here
 
@@ -71,6 +73,13 @@ Block code is formatted as this example here
 
 			[JsonIgnore]
 			public virtual ICollection<Model> Models { get; set; }
+			
+			public Behaviour()
+			{
+				var n = 42L;
+				
+				return;
+			}
 		}
 	}
 
