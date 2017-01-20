@@ -49,9 +49,9 @@ Some paragraph
 
 	Some other paragraph...
 
-According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy: :csharp:`var n = 42L`.
+According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy :C#:`var n = 42L`.
 
-Block code is formatted as this example here:: csharp
+Block code is formatted as this example here:: C#
 
 	namespace Net.Appclusive.Public.Model.Inventory
 	{
