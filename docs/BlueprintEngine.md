@@ -60,23 +60,23 @@ The `BaseModel` is a special `ModelDefinition` (and thus also a `Model`) as it s
 
 The following lists the minimum set of `States` that every `Model` and `Behaviour` in the system must expose:
 
-1. InitialState
+* InitialState
 
   This is the *first* or starting point (which is in fact a `State`) of every `Model` to be instantiated. From there an instance of a `Model` will traverse from `State` to `State` via its exposed `Actions`.
 
   From this `State` an `Action` called `Initialise` will be executed to allow the `Model` to povision its instance.
 
-1. DecommissionedState
+* DecommissionedState
 
   Before a instance of a `Model` is disposed it must transit through a `State` that is called the `DecommissionedState`. An instance of a `Model` in this `State` must prepare itself to get disposed, but also may offer an option to get re-activated (via one of its exposed `Action`).
 
   Instances in this `State` are periodically called by the system via the `Finalise` `Action` to check if they can be safely disposed.
 
-1. FinalState
+* FinalState
 
   With the `InitialState` being the *first* `State` of every instantiated `Model`, the `FinalState` is the *last* `State` of every instantiated `Model`. In fact this is the `State` where an instance of a `Model` is disposed and removed from the [[Inventory]].
 
-1. ErrorState
+* ErrorState
 
   The `ErrorState` is reserved for situations where an instantiated model experienced an unforseen error condition and could not continue execution otherwise (such as a corrupt state). The `Blueprint` designer can use this state for remediation `Actions` (such as the `Remedy` `Action`).
 
@@ -85,15 +85,15 @@ The following lists the minimum set of `States` that every `Model` and `Behaviou
 
 The following lists the minimum set of `Actions` that every `Model` and `Behaviour` in the system must expose:
 
-1. Initialise
+* Initialise
 
   This `Action` is automatically invoked by the system when an instance of any `Model` is created.
 
-1. Finalise
+* Finalise
 
   This `Action` is automatically called by the system when an instance of a `Model` is in the `DecommissionedStatE` and going to be disposed. The `Model` may choose to deny the request for disposal effectively staying in the `DecommissionedState`.
 
-1. Remedy
+* Remedy
 
   An instance of a `Model` in the `ErrorState` may choose to perform a reconciliation task with the aim to place that instance in a defined and stable `State`. This default `Action` is called `Remedy`. A `Blueprint` desginer may choose to add additional remediation `Actions` where required.
 
