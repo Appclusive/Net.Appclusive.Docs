@@ -1,4 +1,6 @@
-# Documentation
+# Appclusive Documentation
+
+![](logo-128-128.png) 
 
 This is the documentation for the [Appclusive Blueprint Modelling and Automation Engine](http://appclusive.net)
 
