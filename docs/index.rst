@@ -1,4 +1,6 @@
-
+.. highlight:: csharp
+.. role:: csharp(code)
+    :language: csharp
 
 =================
 This is a heading
@@ -17,7 +19,9 @@ True   True   True
 | broken exactly like in
 | the source file.
 
+## Heading Level 2
 
+An here it comes ...
 
 term (up to a line of text)
    Definition of the term, which must be indented
@@ -27,7 +31,9 @@ term (up to a line of text)
 next term
    Description.
    
-This is a normal text paragraph. The next paragraph is a code sample::
+This is a normal text paragraph. The next paragraph is a code sample
+
+::
 
    It is not processed in any way, except
    that the indentation is removed.
@@ -49,9 +55,11 @@ Some paragraph
 
 	Some other paragraph...
 
-According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy :C#:`var n = 42L`.
+According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy :code:`var n = 42L;` or :csharp:`var x = 5;`.
 
-Block code is formatted as this example here:: C#
+Block code is formatted as this example here
+
+::
 
 	namespace Net.Appclusive.Public.Model.Inventory
 	{
@@ -65,6 +73,13 @@ Block code is formatted as this example here:: C#
 
 			[JsonIgnore]
 			public virtual ICollection<Model> Models { get; set; }
+			
+			public Behaviour()
+			{
+				var n = 42L;
+				
+				return;
+			}
 		}
 	}
 
