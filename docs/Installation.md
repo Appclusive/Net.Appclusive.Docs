@@ -39,8 +39,8 @@ Installed Software | Windows Server 2012 R2
 
 * [Microsoft WebPI 5.0](https://go.microsoft.com/?linkid=9737537)
 * PoSH Modules
-  * [biz.dfch.PS.System.Logging](https://www.nuget.org/packages/biz.dfch.PS.System.Logging/)
-  * [biz.dfch.PS.Azure.ServiceBus.Management](https://www.nuget.org/packages/biz.dfch.PS.Azure.ServiceBus.Management/)
+    * [biz.dfch.PS.System.Logging](https://www.nuget.org/packages/biz.dfch.PS.System.Logging/)
+    * [biz.dfch.PS.Azure.ServiceBus.Management](https://www.nuget.org/packages/biz.dfch.PS.Azure.ServiceBus.Management/)
 
 ## Procedure
 
