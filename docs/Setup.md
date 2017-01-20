@@ -8,4 +8,3 @@ This page contains information about the setup of the development environment
     1. Open `Package Manager Console` in Visual Studio 2015
     1. Select `Net.Appclusive.Core` as `Default Project`
 	1. Execute `Update-Database`
-	1. 
