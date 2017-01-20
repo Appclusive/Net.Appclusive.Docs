@@ -19,10 +19,12 @@ Installed Software | Windows Server 2012 R2
 
 1. Create SQL login user `appclusive`
 
-  ![](media/sql-login.png)
+    ![](media/sql-login.png)
+
 1. Create new database `appclusive` with owner `appclusive`
 
-  ![](media/database-creation.png)
+    ![](media/database-creation.png)
+
 1. Set `Default database` of `appclusive` user to `appclusive`
 
 # Service Bus Server
