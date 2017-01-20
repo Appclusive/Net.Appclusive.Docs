@@ -1,4 +1,4 @@
-
+.. highlight:: csharp
 
 =================
 This is a heading
@@ -27,8 +27,9 @@ term (up to a line of text)
 next term
    Description.
    
-This is a normal text paragraph. The next paragraph is a code sample::
+This is a normal text paragraph. The next paragraph is a code sample
 
+::
    It is not processed in any way, except
    that the indentation is removed.
 
@@ -49,9 +50,28 @@ Some paragraph
 
 	Some other paragraph...
 
-According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy :C#:`var n = 42L`.
+According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy :code:`var n = 42L`.
 
-Block code is formatted as this example here:: C#
+Block code is formatted as this example here
+
+:: csharp
+
+	namespace Net.Appclusive.Public.Model.Inventory
+	{
+		public class Behaviour : BaseEntity
+		{
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Children { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Parents { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Model> Models { get; set; }
+		}
+	}
+
+:: csharp
 
 	namespace Net.Appclusive.Public.Model.Inventory
 	{
