@@ -48,3 +48,24 @@ A `Behaviour` is something we should really understand, as it is the *basis* for
 Some paragraph
 
 	Some other paragraph...
+
+According to [some StackOverflow article](http://stackoverflow.com/questions/10870719/inline-code-highlighting-in-restructuredtext) code highlighting is easy: :csharp:`var n = 42L`.
+
+Block code is formatted as this example here:: csharp
+
+	namespace Net.Appclusive.Public.Model.Inventory
+	{
+		public class Behaviour : BaseEntity
+		{
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Children { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Parents { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Model> Models { get; set; }
+		}
+	}
+
+Tralala, and now we are the end, my friend ...
