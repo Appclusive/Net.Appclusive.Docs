@@ -55,7 +55,6 @@ According to [some StackOverflow article](http://stackoverflow.com/questions/108
 Block code is formatted as this example here
 
 :: csharp
-
 	namespace Net.Appclusive.Public.Model.Inventory
 	{
 		public class Behaviour : BaseEntity
@@ -73,6 +72,72 @@ Block code is formatted as this example here
 
 :: csharp
 
+	namespace Net.Appclusive.Public.Model.Inventory
+	{
+		public class Behaviour : BaseEntity
+		{
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Children { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Parents { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Model> Models { get; set; }
+		}
+	}
+
+:: code
+
+	namespace Net.Appclusive.Public.Model.Inventory
+	{
+		public class Behaviour : BaseEntity
+		{
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Children { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Parents { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Model> Models { get; set; }
+		}
+	}
+
+:: code
+	namespace Net.Appclusive.Public.Model.Inventory
+	{
+		public class Behaviour : BaseEntity
+		{
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Children { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Parents { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Model> Models { get; set; }
+		}
+	}
+
+::
+
+	namespace Net.Appclusive.Public.Model.Inventory
+	{
+		public class Behaviour : BaseEntity
+		{
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Children { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Behaviour> Parents { get; set; }
+
+			[JsonIgnore]
+			public virtual ICollection<Model> Models { get; set; }
+		}
+	}
+
+::
 	namespace Net.Appclusive.Public.Model.Inventory
 	{
 		public class Behaviour : BaseEntity
