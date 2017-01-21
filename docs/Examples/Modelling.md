@@ -146,7 +146,7 @@ public class Rhomboid: Shape
   public float Length1 { get; set; }
 
   [AttributeName("com.example.Rhomboid.Length2")]
-  public float Length1 { get; set; }
+  public float Length2 { get; set; }
 }
 ```
 
