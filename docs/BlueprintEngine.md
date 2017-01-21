@@ -4,7 +4,7 @@ This page contains information about the *BlueprintEngine* and how blueprints ar
 
 ## Behaviour
 
-A `Behaviour` is the most generic component in the system and defines a set of `Actions`, `States` and `Attributes`. A `Blueprint` can choose to *implement* any `Behaviour` it whishes (which is done via a `Model`), but then also must *implement* all the `Actions`, `States` and `Attributes` of that `Behaviour`.
+A `Behaviour` is the most generic component in the system and defines a set of `ModelActions`, `ModelStates` and `ModelAttributes`. A `Blueprint` can choose to *implement* any `Behaviour` it whishes (which is done via a `Model`), but then also must *implement* all the `ModelActions`, `ModelStates` and `ModelAttributes` of that `Behaviour`.
 
 The actual implementation of a `Behaviour` is done via a `BehaviourDefinition` which is a special form of a `Model`.
 
@@ -12,33 +12,33 @@ The actual implementation of a `Behaviour` is done via a `BehaviourDefinition` w
 
 `Behaviours` form a hierarchy tree, however unlike a real tree where one `Behaviour` can *derive* from multiple other `Behaviours` (similar to multiple inheritance in programming languages like C++). This chain starts at a common single *root* that is called `BaseBehaviour`. 
 
-In other words, the `BaseBehaviour` defines the most common `Actions` and `States` for all other `Behaviours` (the `BaseBehaviour` does not defines any `Attributes`).
+In other words, the `BaseBehaviour` defines the most common `ModelActions` and `ModelStates` for all other `Behaviours` (the `BaseBehaviour` does not defines any `ModelAttributes`).
 
-## State
+## ModelState
 
-* A `State` describe an instantiated `Model` while at rest. An instance in any given `State` does not change until an `Action` is invoked on that instance.
+* A `ModelState` describe an instantiated `Model` while at rest. An instance in any given `ModelState` does not change until a `ModelAction` is invoked on that instance.
 
-* Each `State` has a *name* which must be unique throughout the whole state machine.
+* Each `ModelState` has a *name* which must be unique throughout the whole state machine.
 
-* Each `State` must be part of a `Transistion`, which means it must have at least an `Action` leading to it or an `Action` leading from it.
+* Each `ModelState` must be part of a `Transistion`, which means it must have at least a `ModelAction` leading to it or a `ModelAction` leading from it.
 
-## Action
+## ModelAction
 
-* An `Action` is a means (and the only means) for a `Model` to transit from an arbitrary source `State` to arbitrary destination `State` (where the *destination* `State` can also be the *source* `State`, effectively creating a loop). 
+* A `ModelAction` is a means (and the only means) for a `Model` to transit from an arbitrary source `ModelState` to arbitrary destination `ModelState` (where the *destination* `ModelState` can also be the *source* `ModelState`, effectively creating a loop). 
 
-* An `Action` can define zero or more `Attributes` in order to be able to be invoked. Of these `Attributes` zero or more `Attributes` may have additional *constraints* (such as being `Required`).
+* A `ModelAction` can define zero or more `ModelAttributes` in order to be able to be invoked. Of these `ModelAttributes` zero or more `ModelAttributes` may have additional *constraints* (such as being `Required`).
 
-* Each `Action` in a `Model` may only appear *once* in any `Transition`, which means that the *name* of the `Action` must be unique throughout the whole state machine.
+* ~~Each `ModelAction` in a `Model` may only appear *once* in any `Transition`, which means that the *name* of the `ModelAction` must be unique throughout the whole state machine.~~
 
 In other words. Given an arbitrary `Action` (name) we also know the associated *source* and *destination* of it (which forms a `Transition`).
 
-## Attribute
+## ModelAttribute
 
-* An `Attribute` basically is a Name/Value pair with additional constraints in form of annotations. The name of any `Attribute` is unique throughout the whole system and always consists of a dot-notation starting with reversed top level domain name (such as `com.example.Appclusive.Blueprint.Name`).
+* A `ModelAttribute` basically is a Name/Value pair with additional constraints in form of annotations. The name of any `ModelAttribute` is unique throughout the whole system and always consists of a dot-notation starting with reversed top level domain name (such as `com.example.Appclusive.Blueprint.Name`).
 
-* Any `Model` can override or redefine any `Attributes` (or its constraints) that it *derives* from its ancestor `Model` chain.
+* Any `Model` can override or redefine any `ModelAttributes` (or its constraints) that it *derives* from its ancestor `Model` chain.
 
-* Any `Attribute` constraints directly derived from its ancestor `Models` are also present on the current `Model`. Any `Attributes` that a `Model` *implements* via one of its `Behaviours` must be re-defined on the `Model`.
+* Any `ModelAttribute` constraints directly derived from its ancestor `Models` are also present on the current `Model`. Any `ModelAttributes` that a `Model` *implements* via one of its `Behaviours` must be re-defined on the `Model`.
 
 ## Model
 
@@ -48,13 +48,13 @@ In other words. Given an arbitrary `Action` (name) we also know the associated *
 
 * A `Model` can choose not be the parent for any other `Models` which is then considered to be `sealed`.
 
-### ModelDefinition
+### BehaviourDefinition
 
-Every time a `Behaviour` is defined, its actual implementation is done via a `BehaviourDefinition` (which is a special form of a `Model`). This means that this `BehaviourDefinition` contains all the `Actions`, `States` and `Attributes` the `Behaviour` whishes to expose.
+Every time a `Behaviour` is defined, its actual implementation is done via a `BehaviourDefinition` (which is a special form of a `Model`). This means that this `BehaviourDefinition` contains all the `ModelActions`, `ModelStates` and `ModelAttributes` the `Behaviour` whishes to expose.
 
 ### BaseModel
 
-The `BaseModel` is a special `ModelDefinition` (and thus also a `Model`) as it serves as the *root* `Model` for all other `BehaviourDefinitions` and thus all other `Models`.
+The `BaseModel` is a special `BehaviourDefinition` (and thus also a `Model`) as it serves as the *root* `Model` for all other `BehaviourDefinitions` and thus all other `Models`.
 
 #### BaseModelStates
 
@@ -62,40 +62,40 @@ The following lists the minimum set of `States` that every `Model` and `Behaviou
 
 * InitialState
 
-  This is the *first* or starting point (which is in fact a `State`) of every `Model` to be instantiated. From there an instance of a `Model` will traverse from `State` to `State` via its exposed `Actions`.
+  This is the *first* or starting point (which is in fact a `ModelState`) of every `Model` to be instantiated. From there an instance of a `Model` will traverse from `ModelState` to `ModelState` via its exposed `Actions`.
 
-  From this `State` an `Action` called `Initialise` will be executed to allow the `Model` to povision its instance.
+  From this `ModelState` a `ModelAction` called `Initialise` will be executed to allow the `Model` to povision its instance.
 
 * DecommissionedState
 
-  Before a instance of a `Model` is disposed it must transit through a `State` that is called the `DecommissionedState`. An instance of a `Model` in this `State` must prepare itself to get disposed, but also may offer an option to get re-activated (via one of its exposed `Action`).
+  Before a instance of a `Model` is disposed it must transit through a `ModelState` that is called the `DecommissionedState`. An instance of a `Model` in this `ModelState` must prepare itself to get disposed, but also may offer an option to get re-activated (via one of its exposed `ModelAction`).
 
-  Instances in this `State` are periodically called by the system via the `Finalise` `Action` to check if they can be safely disposed.
+  Instances in this `State` are periodically called by the system via the `Finalise` `ModelAction` to check if they can be safely disposed.
 
 * FinalState
 
-  With the `InitialState` being the *first* `State` of every instantiated `Model`, the `FinalState` is the *last* `State` of every instantiated `Model`. In fact this is the `State` where an instance of a `Model` is disposed and removed from the [[Inventory]].
+  With the `InitialState` being the *first* `ModelState` of every instantiated `Model`, the `FinalState` is the *last* `ModelState` of every instantiated `Model`. In fact this is the `ModelState` where an instance of a `Model` is disposed and removed from the [[Inventory]].
 
 * ErrorState
 
-  The `ErrorState` is reserved for situations where an instantiated model experienced an unforseen error condition and could not continue execution otherwise (such as a corrupt state). The `Blueprint` designer can use this state for remediation `Actions` (such as the `Remedy` `Action`).
+  The `ErrorState` is reserved for situations where an instantiated model experienced an unforseen error condition and could not continue execution otherwise (such as a corrupt state). The `Blueprint` designer can use this state for remediation `ModelActions` (such as the `Remedy` `ModelAction`).
 
 
 #### BaseModelActions
 
-The following lists the minimum set of `Actions` that every `Model` and `Behaviour` in the system must expose:
+The following lists the minimum set of `ModelActions` that every `Model` and `Behaviour` in the system must expose:
 
 * Initialise
 
-  This `Action` is automatically invoked by the system when an instance of any `Model` is created.
+  This `ModelAction` is automatically invoked by the system when an instance of any `Model` is created.
 
 * Finalise
 
-  This `Action` is automatically called by the system when an instance of a `Model` is in the `DecommissionedStatE` and going to be disposed. The `Model` may choose to deny the request for disposal effectively staying in the `DecommissionedState`.
+  This `ModelAction` is automatically called by the system when an instance of a `Model` is in the `DecommissionedState` and going to be disposed. The `Model` may choose to deny the request for disposal effectively staying in the `DecommissionedState`.
 
 * Remedy
 
-  An instance of a `Model` in the `ErrorState` may choose to perform a reconciliation task with the aim to place that instance in a defined and stable `State`. This default `Action` is called `Remedy`. A `Blueprint` desginer may choose to add additional remediation `Actions` where required.
+  An instance of a `Model` in the `ErrorState` may choose to perform a reconciliation task with the aim to place that instance in a defined and stable `ModelState`. This default `ModelAction` is called `Remedy`. A `Blueprint` desginer may choose to add additional remediation `ModelActions` where required.
 
 #### BaseModel StateMachine and Transitions
 
