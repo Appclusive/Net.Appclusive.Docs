@@ -179,9 +179,9 @@ public class Rhomboid : Shape
 }
 ```
 
-Here we see that we derived the existing `ModelAttribute` *NewSize* from the parent *Shape* as the Length1 parameter and added a new `ModelAttribute` *Length2*. The former attribute was marked as `Required` from its *Parent* and *Length2* is effectively optional (as it is not marked as `Required`). Our *Rhomboid* will then use the value *NewSize* for *Length1* and *Length2* if no "Length2* was specified by the user. The benefit of this is that any user who knows how to *Resize* a *Shape* still knows how to resize a *Rhomboid*.
+Here we see that we derived the existing `ModelAttribute` *NewSize* from the parent *Shape* as *Length1* (as we did not specify it at all) and added a new `ModelAttribute` *Length2*. The former attribute was marked as `Required` (on its *Parent*) and *Length2* is effectively optional (as it is not marked as `Required`). Our *Rhomboid* will then use the value *NewSize* for *Length1* and *Length2* if no "Length2* was specified by the user. The benefit of this is that any user who knows how to *Resize* a *Shape* still knows how to resize a *Rhomboid*.
 
-And now we see that we can further re-arrange our existing *Square* as it has something in common with *Rhomboid*:
+And now we see that we can further re-model our existing *Square* as it has something in common with *Rhomboid*:
 
 ``` csharp
 public class Square : Rhomboid
@@ -196,7 +196,7 @@ Here we see that the definition of our *Square* has been simplified. We do not n
 
 By this we can see that we can simplify and re-use components if we design our `Models` carefully.
 
-This example could be further extended by supporting a *Rectangle* as well (which would lead to yet another *Paren`* in our model chain).
+This example could be further extended by supporting a *Rectangle* as well (which would lead to yet another *Parent* in our `Model` chain).
 
 # ModelStates
 
