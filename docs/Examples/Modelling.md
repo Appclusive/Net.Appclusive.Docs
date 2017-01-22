@@ -5,8 +5,8 @@ Note: For a more technical description of *Models* see [BlueprintEngine](../Blue
 A `Model` is a formal description of an object which includes
 
 * `ModelAttributes`
-* `ModelStates`
 * `ModelActions`
+* `ModelStates`
 
 A `Model` can (and must) *derive* from other `Models`, but only from one `Model` at a time. The `Model` from where we *derive* is called the *Parent*. Each *Parent* in turn has one other *Parent*. By *deriving* from a *Parent* a `Model` tells us, that it shares some similarity with it. 
 
