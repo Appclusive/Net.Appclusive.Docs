@@ -1,8 +1,6 @@
-# Note
-
-For a more technical description of *Models* see [BlueprintEngine](../BlueprintEngine.md).
-
 # Introduction
+
+Note: For a more technical description of *Models* see [BlueprintEngine](../BlueprintEngine.md).
 
 A `Model` is a formal description of an object which includes
 
@@ -137,7 +135,7 @@ public class Shape : BaseModel
 }
 ```
 
-Note: in order to force our users to supply a value for *NewSize* when calling the *Resize* `Action` we mark the `ModelAttribute` as being `Required`. Appclusive will not process any *Resize* requests unless the user specifies a value for *NewSize*.
+Note: in order to force our users to supply a value for *NewSize* when calling the *Resize* `ModelAction` we mark the `ModelAttribute` as being `Required`. Appclusive will not process any *Resize* requests unless the user specifies a value for *NewSize*.
 
 This is all good and fine but what does *NewSize* mean for a *Circle* or a *Square*? The answer to this is: *it depends*. For the *Circle* we decide to use *NewSize* as the new *Radius* and for the *Square* we decide to use *NewSize* as the new *Length*. 
 
@@ -200,6 +198,10 @@ By this we can see that we can simplify and re-use components if we design our `
 
 This example could be further extended by supporting a *Rectangle* as well (which would lead to yet another *Paren`* in our model chain).
 
-## Behaviours
+# ModelStates
 
 *WIP*
+
+# Behaviours
+
+*WIP* should be better described in a separate file
