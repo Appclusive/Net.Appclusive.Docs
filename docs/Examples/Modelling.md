@@ -192,7 +192,7 @@ public class Square : Rhomboid
 }
 ```
 
-Here we see that the definition of our *Square* has been simplified. We do not need any special *Length* property any more and the *Resize* `ModelAction` is directly taken from the *Rhomboid*. A user who knows a *Shape* and only supplies the *NewSize* `ModelAttribute` can resize a shape and a user who supplies the second `ModelAttribute` *Length2* from the *Rhomboid* `Model` can also resize a *Square* (of course we will inform the user if both of the lengths do not match as a *Square* must have all the same lengths).
+Here we see that the definition of our *Square* has been simplified. We do not need any special *Length* property any more and the *Resize* `ModelAction` is directly taken from the *Rhomboid*. A user who knows a *Shape* and only supplies the *NewSize* `ModelAttribute` can resize a shape and a user who supplies the second `ModelAttribute` *Length2* from the *Rhomboid* `Model` can also resize a *Square* (of course we will have to inform the user if both of the lengths do not match as a *Square* must have all the same lengths).
 
 By this we can see that we can simplify and re-use components if we design our `Models` carefully.
 
