@@ -24,6 +24,7 @@ Currently we have drafts for the following topics:
 
 [![](./media/Twitter_Logo_White_On_Blue.png)](https://twitter.com/appclusive) 
 [![](./media/GitHub-Mark-32px.png)](https://github.com/Appclusive) 
+[![](./media/wordpress-logo-32-blue.png)](https://d-fens.net) 
 
 # Copyright
 
