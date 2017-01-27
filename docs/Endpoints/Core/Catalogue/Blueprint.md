@@ -1,15 +1,15 @@
 A `Blueprint` wraps one or more `Models` so they can be made available in a `Catalogue` and be ordered and provisioned. There are two types of `Blueprints`:
 
-* Simple (? Basic ?)
-* Composite (? Complex, Combined, Advanced ?)
+* Basic
+* Composite (? Advanced ?)
 
 # Simple
 
-A *simple* `Blueprint` wraps and describes only a single `Model`. This means that all defined attributes of that `Model` effectively become the input parameters (? properties ?) for that `Blueprint`.
+A *Basic* `Blueprint` wraps and describes only a single `Model`. This means that all defined attributes of that `Model` effectively become the input arguments (? attributes ?) for that `Blueprint`.
 
 # Composite
 
-A *composite* `Blueprint` wraps an arbitrary number of `Models` and/or other `Blueprints` into a single `Blueprint`. Therefore a *composite* `Blueprint` can have a combination of input parameters that may be mapped to any `Model` attributes in any form that are required by the `Models`.
+A *Composite* `Blueprint` wraps an arbitrary number of `Models` and/or other `Blueprints` into a single `Blueprint`. Therefore a *Composite* `Blueprint` can have a combination of input parameters that may be mapped to any `Model` attributes in any form that are required by the `Models`.
 
 In addition the `Blueprint` designer may modify and map `Blueprint` input parameters in any way that he seems fit for that purpose. It is also possible to let a `Blueprint` define an input parameter that is used as a basis for other `Model` attributes, eg:
 
