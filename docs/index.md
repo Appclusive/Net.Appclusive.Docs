@@ -1,6 +1,6 @@
 ![](./media/logo-128-128.png)
 
-**This is the documentation for the [Appclusive Blueprint Modelling and Automation Engine](http://appclusive.net)**
+**This is the documentation for the [Appclusive Blueprint Modelling and Automation Engine](https://github.com/Appclusive)**
 
 For a quick overview about what Appclusive is and what you can do with it, see the [Introduction](Introduction.md). 
 
