@@ -10,7 +10,7 @@ Appclusive supports different authentication mechanisms independent of the under
 
 * Windows Integrated, ActiveDirectory  (via `Authorization` header)
 * [JWT](https://jwt.io/)  (via separate user defined HTTP header)
-* [OAUTH2](https://oauth.net/2/) (via `Authorization Bearer` header)
+* [OAUTH2](https://oauth.net/2/) (via `Authorization` header with `Bearer` token)
 
 Appclusive does not act as an Identity Provider but relies on external systems to provide that functionality.
 
