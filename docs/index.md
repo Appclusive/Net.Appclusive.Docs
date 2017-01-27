@@ -9,17 +9,24 @@ For a quick overview about what Appclusive is and what you can do with it, see t
 Currently we have drafts for the following topics:
 
 * [BlueprintEngine](BlueprintEngine.md)
+* [Api](Api.md)
 
   Describes Blueprint, Model, Behaviour, State, Action
 
-* [Blueprint](Blueprint.md)
-* [Catalogue](Catalogue.md)
-* [Inventory](Inventory.md)
+* [Blueprint](./endpoints/Core/Catalogue/Blueprint.md)
+* [Catalogue](./endpoints/Core/Catalogue/Catalogue.md)
 * [Workflows](Workflows.md)
+
+# Versions and Updates
+
+* see [What's new?](WhatsNew.md) for latest changes
+* for the latest vesion, make sure you check the [develop](/en/develop/) branch of this documentation
 
 # Copyright
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This documentation is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+
+The Appclusive itself can be acquired under an [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) or [MIT](https://opensource.org/licenses/MIT) license.
 
 Copyright 2013-2017 [d-fens GmbH](http://d-fens.net), General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 
