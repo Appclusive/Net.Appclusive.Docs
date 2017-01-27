@@ -13,14 +13,15 @@ Currently we have drafts for the following topics:
 
   Describes Blueprint, Model, Behaviour, State, Action
 
-* [Blueprint](./endpoints/Core/Catalogue/Blueprint.md)
-* [Catalogue](./endpoints/Core/Catalogue/Catalogue.md)
+* [Blueprint](./endpoints/Core/Catalogue/Blueprint.md/)
+* [Catalogue](./endpoints/Core/Catalogue/Catalogue.md/)
 * [Workflows](Workflows.md)
 
 # Versions and Updates
 
 * see [What's new?](WhatsNew.md) for latest changes
-* for the latest vesion, make sure you check the [develop](/en/develop/) branch of this documentation
+* for the latest vesion, make sure you check the [develop](http://docs.appclusive.net/en/develop/) branch of this documentation
+* follow us on [![Twitter](./media/Twitter_Logo_White_On_Blue.png)](https://twitter.com/appclusive) to get the latest updates
 
 # Copyright
 
