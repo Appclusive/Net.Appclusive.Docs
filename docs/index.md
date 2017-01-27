@@ -13,8 +13,8 @@ Currently we have drafts for the following topics:
 
   Describes Blueprint, Model, Behaviour, State, Action
 
-* [Blueprint](./Endpoints/Core/Catalogue/Blueprint/)
-* [Catalogue](./Endpoints/Core/Catalogue/Catalogue/)
+* [Blueprint](./Endpoints/Core/Catalogue/Blueprint)
+* [Catalogue](./Endpoints/Core/Catalogue/Catalogue)
 * [Workflows](Workflows.md)
 
 # Versions and Updates
