@@ -26,7 +26,7 @@ public class Shape : BaseModel
 }
 ```
 
-In this case our *Shape* is a completely new `Model` that does not want to have any similarities with other `Models`. But as any `Model` **must** derive from a *Parent* it derives from `BaseModel` which serves as a common base for all models (so they can be identifies as such). *Deriving* from a `Model` is always expressed by specifying the *Parent* after our new `Model` delimited by a *colon* (`:`).
+In this case our *Shape* is a completely new `Model` that does not want to have any similarities with other `Models`. But as any `Model` **must** derive from a *Parent* it derives from `BaseModel` which serves as a common base for all models (so they can be identified as such). *Deriving* from a `Model` is always expressed by specifying the *Parent* after our new `Model` delimited by a *colon* (`:`).
 
 ### ModelAttributes
 
@@ -41,7 +41,7 @@ public class Shape : BaseModel
 }
 ```
 
-Here we notice a few intersting things:
+Here we notice a few interesting things:
 
 #### public float Area { get; set; }
 
