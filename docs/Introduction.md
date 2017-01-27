@@ -11,4 +11,4 @@ The whole inventory is driven by the models and their interactions and supports 
 
 All this information is available via a (ODATA based) REST API with full introspection and server-side validation of every customer defined model (along with their attributes).
 
-For further information see our [Examples](Examples.md) section.
+For further information see our [Examples](./Examples/Examples) section.

@@ -8,14 +8,14 @@ For a quick overview about what Appclusive is and what you can do with it, see t
 
 Currently we have drafts for the following topics:
 
-* [BlueprintEngine](BlueprintEngine.md)
-* [Api](Api.md)
+* [BlueprintEngine](./Development/BlueprintEngine)
+* [Api](./Endpoints/Api)
 
   Describes Blueprint, Model, Behaviour, State, Action
 
 * [Blueprint](./Endpoints/Core/Catalogue/Blueprint)
 * [Catalogue](./Endpoints/Core/Catalogue/Catalogue)
-* [Workflows](Workflows.md)
+* [Workflows](./Development/Workflows)
 
 # Versions and Updates
 
