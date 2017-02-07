@@ -6,11 +6,11 @@ The following classes have to be implemented to expose functionality as OData se
 
 * `_ENTITY_` (Class for DataAccess)
 * `_ENTITY_` (Model class)
-* `_ENTITY_sController`  (OData controller)
-* `_ENTITY_ManagerTest` (Test class for entity manager)
-* `_ENTITY_Manager` (Entity manager)
 * `_ENTITY_ValidatorTest` (Test class for entity validator)
 * `_ENTITY_Validator` (Entity validator)
+* `_ENTITY_ManagerTest` (Test class for entity manager)
+* `_ENTITY_Manager` (Entity manager)
+* `_ENTITY_sController`  (OData controller)
 
 `_ENTITY_` is a placeholder for the name of the corresponding entity.
 
@@ -59,25 +59,33 @@ namespace Net.Appclusive.Public.Model._DOMAIN_
 }
 ``` 
 
-## ODataController
+## Validator
 
-The ODataController resides in project `Net.Appclusive.WebApi` under `OdataServices\_ENDPOINT_\_ENTITY_sController.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain and `_ENDPOINT_` has to be replaced with `Core`, `Diagnostics`, ...
+The Validator class resides in project `Net.Appclusive.Core` under `Domain\_DOMAIN_\_ENTITY_Validator.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
 
 **Example**
 
 ```
-using Net.Appclusive.Core.Domain;
+using System.Diagnostics.Contracts;
 using Net.Appclusive.Public.Model._DOMAIN_;
+using Net.Appclusive.Public.Validation;
 
-namespace Net.Appclusive.WebApi.OdataServices._ENDPOINT_
+namespace Net.Appclusive.Core.Domain._DOMAIN_
 {
-    [Endpoint("_ENDPOINT_")]
-    public partial class _ENTITY_sController : OdataControllerBase<_ENTITY_>
+    public class _ENTITY_Validator : BaseEntityValidator<_ENTITY_>
     {
-        public _ENTITY_sController(IEntityManager<_ENTITY_> entityManager)
-            : base(entityManager)
+        public override KeyNameValue ForCreate(_ENTITY_ entityToBeCreated)
         {
-            // there is nothing to be done here
+            Contract.Requires(!string.IsNullOrWhiteSpace(entityToBeCreated.Value));
+
+            return base.ForCreate(entityToBeCreated);
+        }
+
+        public override _ENTITY_ ForUpdate(_ENTITY_ modifiedEntity, _ENTITY_ originalEntity)
+        {
+            Contract.Requires(modifiedEntity.Id == originalEntity.Id);
+
+            return base.ForUpdate(modifiedEntity, originalEntity);
         }
     }
 }
@@ -118,33 +126,25 @@ namespace Net.Appclusive.Core.Domain._DOMAIN_
 }
 ```
 
-## Validator
+## ODataController
 
-The Validator class resides in project `Net.Appclusive.Core` under `Domain\_DOMAIN_\_ENTITY_Validator.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
+The ODataController resides in project `Net.Appclusive.WebApi` under `OdataServices\_ENDPOINT_\_ENTITY_sController.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain and `_ENDPOINT_` has to be replaced with `Core`, `Diagnostics`, ...
 
 **Example**
 
 ```
-using System.Diagnostics.Contracts;
+using Net.Appclusive.Core.Domain;
 using Net.Appclusive.Public.Model._DOMAIN_;
-using Net.Appclusive.Public.Validation;
 
-namespace Net.Appclusive.Core.Domain._DOMAIN_
+namespace Net.Appclusive.WebApi.OdataServices._ENDPOINT_
 {
-    public class _ENTITY_Validator : BaseEntityValidator<_ENTITY_>
+    [Endpoint("_ENDPOINT_")]
+    public partial class _ENTITY_sController : OdataControllerBase<_ENTITY_>
     {
-        public override KeyNameValue ForCreate(_ENTITY_ entityToBeCreated)
+        public _ENTITY_sController(IEntityManager<_ENTITY_> entityManager)
+            : base(entityManager)
         {
-            Contract.Requires(!string.IsNullOrWhiteSpace(entityToBeCreated.Value));
-
-            return base.ForCreate(entityToBeCreated);
-        }
-
-        public override _ENTITY_ ForUpdate(_ENTITY_ modifiedEntity, _ENTITY_ originalEntity)
-        {
-            Contract.Requires(modifiedEntity.Id == originalEntity.Id);
-
-            return base.ForUpdate(modifiedEntity, originalEntity);
+            // there is nothing to be done here
         }
     }
 }
