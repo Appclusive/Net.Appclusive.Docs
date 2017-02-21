@@ -16,4 +16,4 @@ This page contains information about the setup of the development environment
 
 * To add some demo data execute [`Add-ApcExampleData.ps1`](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/Add-ApcExampleData.ps1) in PowerShell console as follows
 
-		`.\Add-ApcExampleData.ps1 -ConnectionType LocalDB`
+	`.\Add-ApcExampleData.ps1 -ConnectionType LocalDB`
