@@ -4,19 +4,20 @@
 
 The following classes have to be implemented to expose functionality as OData service
 
-* `_ENTITY_` (Persistence representation)
-* `_ENTITY_` (Model class)
+* `_ENTITY_` (Data entity class)
+* `_ENTITY_` (Public entity class)
 * `_ENTITY_ValidatorTest` (Test class for entity validator)
 * `_ENTITY_Validator` (Entity validator)
 * `_ENTITY_ManagerTest` (Test class for entity manager)
-* `_ENTITY_Manager` (Entity manager)
+* `_ENTITY_Manager` (Public entity manager)
 * `_ENTITY_sController`  (OData controller)
+* [Optional] `_ENTITY_DataManager` (Data entity manager)
 
 `_ENTITY_` is a placeholder for the name of the corresponding entity.
 
-## DataAccess
+## Data Entity
 
-The class for data access resides in project `Net.Appclusive.Internal` under `DataAccess\_DOMAIN_\_ENTITY_.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
+The data entity class, which represents the persistence layer resides in project `Net.Appclusive.Internal` under `Domain\_DOMAIN_\_ENTITY_.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
 
 The following steps have only to be executed, if the `_ENTITY_` will be persisted in the database.
 
@@ -28,9 +29,9 @@ The following steps have only to be executed, if the `_ENTITY_` will be persiste
 ```
 using System.ComponentModel.DataAnnotations;
 
-namespace Net.Appclusive.Internal.DataAccess._DOMAIN_
+namespace Net.Appclusive.Internal.Domain._DOMAIN_
 {
-    public class _ENTITY_ : NonTenantDataAccessBase
+    public class _ENTITY_ : DataEntity
     {
         [Required]
         public string Value { get; set; }
@@ -38,9 +39,9 @@ namespace Net.Appclusive.Internal.DataAccess._DOMAIN_
 }
 ```
 
-## Model
+## Public Entity
 
-The DataAccess class resides in project `Net.Appclusive.Public` under `Domain\_DOMAIN_\_ENTITY_.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
+The public entity class resides in project `Net.Appclusive.Public` under `Domain\_DOMAIN_\_ENTITY_.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
 This class has to be implemented even if there is no representation of the `_ENTITY_` in the database. 
 
 **Example**
@@ -48,9 +49,9 @@ This class has to be implemented even if there is no representation of the `_ENT
 ```
 using System.ComponentModel.DataAnnotations;
 
-namespace Net.Appclusive.Public.Model._DOMAIN_
+namespace Net.Appclusive.Public.Domain._DOMAIN_
 {
-    public class _ENTITY_ : BaseEntity
+    public class _ENTITY_ : PublicEntity
     {
         [Required]
         public string Value { get; set; }
@@ -58,7 +59,7 @@ namespace Net.Appclusive.Public.Model._DOMAIN_
 }
 ``` 
 
-## Validator
+## Entity Validator
 
 The Validator class resides in project `Net.Appclusive.Core` under `Domain\_DOMAIN_\_ENTITY_Validator.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
 
@@ -66,7 +67,7 @@ The Validator class resides in project `Net.Appclusive.Core` under `Domain\_DOMA
 
 ```
 using System.Diagnostics.Contracts;
-using Net.Appclusive.Public.Model._DOMAIN_;
+using Net.Appclusive.Public.Domain._DOMAIN_;
 using Net.Appclusive.Public.Validation;
 
 namespace Net.Appclusive.Core.Domain._DOMAIN_
@@ -82,7 +83,7 @@ namespace Net.Appclusive.Core.Domain._DOMAIN_
 
         public override _ENTITY_ ForUpdate(_ENTITY_ modifiedEntity, _ENTITY_ originalEntity)
         {
-            Contract.Requires(modifiedEntity.Id == originalEntity.Id);
+            Contract.Requires(!string.IsNullOrWhiteSpace(modifiedEntity.Value));
 
             return base.ForUpdate(modifiedEntity, originalEntity);
         }
@@ -90,30 +91,26 @@ namespace Net.Appclusive.Core.Domain._DOMAIN_
 }
 ```
 
-## Manager
+## Public Entity Manager
 
-The Manager class resides in project `Net.Appclusive.Core` under `Domain\_DOMAIN_\_ENTITY_Manager.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
+The public entity manager class resides in project `Net.Appclusive.Core` under `Domain\_DOMAIN_\_ENTITY_Manager.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
 
 **Example**
 
 ```
 using System;
-using Net.Appclusive.Core.DbContext;
-using Net.Appclusive.Public.Constants;
-using Net.Appclusive.Public.Model._DOMAIN_;
-using Net.Appclusive.Core.Security;
+using Net.Appclusive.Public.Domain._DOMAIN_;
 
 namespace Net.Appclusive.Core.Domain._DOMAIN_
 {
-    public partial class _ENTITY_Manager : BaseDataAccessEntityManager<_ENTITY_, Internal.DataAccess._DOMAIN_._ENTITY_>
+    public partial class _ENTITY_Manager : BasePublicEntityDataManager<_ENTITY_, Internal.Domain._DOMAIN_._ENTITY_>
     {
-        public _ENTITY_Manager(BaseDataAccessEntityManagerCtorParams ctorParams)
-            : base(ctorParams)
+		public override ActionConfigurationMap ActionMap { get; } = ActionConfigurationMap.For<_ENTITY_Manager>();
+		
+        public _ENTITY_Manager(BaseDataEntityManager<Internal.Domain._DOMAIN_._ENTITY_> dataManager)
         { 
             // there is nothing to do here
         }
-		
-		public override ActionConfigurationMap ActionMap { get; } = ActionConfigurationMap.For<JobManager>();
 
         public override _ENTITY_ Template()
         {
@@ -135,17 +132,42 @@ The ODataController resides in project `Net.Appclusive.WebApi` under `OdataServi
 
 ```
 using Net.Appclusive.Core.Domain;
-using Net.Appclusive.Public.Model._DOMAIN_;
+using Net.Appclusive.Public.Domain._DOMAIN_;
 
 namespace Net.Appclusive.WebApi.OdataServices._ENDPOINT_
 {
-    [Endpoint("_ENDPOINT_")]
     public partial class _ENTITY_sController : CoreEndpointControllerBase<_ENTITY_>
     {
-        public _ENTITY_sController(IEntityManager<_ENTITY_> entityManager)
+        public _ENTITY_sController(IPublicEntityManager<_ENTITY_> entityManager)
             : base(entityManager)
         {
             // there is nothing to be done here
+        }
+    }
+}
+```
+
+## Data Entity Manager
+
+The data entity manager class resides in project `Net.Appclusive.Core` under `Domain\_DOMAIN_\_ENTITY_DataManager.cs`, where `_DOMAIN_` is a placeholder for the corresponding domain.
+
+**Example**
+
+```
+using System;
+using Net.Appclusive.Core.Cache;
+using Net.Appclusive.Internal.Domain._DOMAIN_;
+using System.Diagnostics.Contracts;
+using Net.Appclusive.Public.Constants;
+
+namespace Net.Appclusive.Core.Domain._DOMAIN_
+{
+    public class _ENTITY_DataManager : BaseDataEntityManager<_ENTITY_>
+    {
+        public _ENTITY_DataManager(BaseDataEntityManagerCtorParams ctorParams)
+            : base(ctorParams)
+        { 
+            // there is nothing to do here
         }
     }
 }
