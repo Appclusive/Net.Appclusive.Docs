@@ -1,5 +1,20 @@
 # Development
 
+## Setup Persistence Database
+
+To create the persistence database execute the following steps.
+
+1. Open `SQL Server Object Explorer` in Visual Studio 2015
+1. Expand `SQL Server` and `(localdb)\MSSQLLocalDB (SQL Server 13.0.2151 - COMPUTERNAME\USERNAME)`
+1. Right click on `Databases`
+  1. Select `Add New Database` from context menu
+    1. Database Name: `AppclusiveWorkflows`
+    1. Database Location: `C:\src\App_Data`
+1. Right click on newly created database `AppclusiveWorkflows`
+  1. Select `New Query` from context menu
+  1. Copy content of `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en\SqlWorkflowInstanceStoreSchema.sql` to the query windows and execute query
+  1. Copy content of `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en\SqlWorkflowInstanceStoreLogic.sql` to the query windows and execute query
+
 ## Design for an Activity
 
 The following blog post explains how to create a design for an Activity.
