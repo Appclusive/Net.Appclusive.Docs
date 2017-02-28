@@ -39,7 +39,6 @@ The following points have to be considered when creating a design for an Activit
 * [Howto create a Workflow](https://msdn.microsoft.com/en-us/library/dd489437(VS.110).aspx)
 * [Howto run a Workflow](https://msdn.microsoft.com/en-us/library/dd489463(VS.110).aspx)
 * [Howto create an Activity](https://msdn.microsoft.com/en-us/library/dd489453(VS.110).aspx)
-* [Building dynamic Activities](https://blogs.infosupport.com/building-dynamic-activities-in-workflow-foundation-4-part-3/)
 * [Associating a WF4 Activity designer to a custom Activity using MetadataStore](http://geekswithblogs.net/jkurtz/archive/2010/01/26/137639.aspx)
 * [Workflow Persistence](https://msdn.microsoft.com/en-us/library/dd489420(v=vs.110).aspx)
 * [Howto enable Persistence for Workflows and Workflow Services](https://msdn.microsoft.com/en-us/library/ee829476(v=vs.110).aspx)
