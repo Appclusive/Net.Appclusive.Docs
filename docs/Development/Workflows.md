@@ -12,8 +12,8 @@ To create the persistence database execute the following steps.
     1. Database Location: `C:\src\App_Data`
 1. Right click on newly created database `AppclusiveWorkflows`
   1. Select `New Query` from context menu
-  1. Copy content of `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en\SqlWorkflowInstanceStoreSchema.sql` to the query windows and execute query
-  1. Copy content of `C:\Windows\Microsoft.NET\Framework\4.0.30319\sql\en\SqlWorkflowInstanceStoreLogic.sql` to the query windows and execute query
+  1. Copy content of `%WINDIR%\Microsoft.NET\Framework\v4.0.30319\SQL\EN\SqlWorkflowInstanceStoreSchema.sql` to the query window and execute query
+  1. Copy content of `%WINDIR%\Microsoft.NET\Framework\v4.0.30319\SQL\EN\SqlWorkflowInstanceStoreLogic.sql` to the query window and execute query
 
 ## Design for an Activity
 
@@ -41,4 +41,3 @@ The following points have to be considered when creating a design for an Activit
 * [Howto create an Activity](https://msdn.microsoft.com/en-us/library/dd489453(VS.110).aspx)
 * [Associating a WF4 Activity designer to a custom Activity using MetadataStore](http://geekswithblogs.net/jkurtz/archive/2010/01/26/137639.aspx)
 * [Workflow Persistence](https://msdn.microsoft.com/en-us/library/dd489420(v=vs.110).aspx)
-* [Howto enable Persistence for Workflows and Workflow Services](https://msdn.microsoft.com/en-us/library/ee829476(v=vs.110).aspx)
