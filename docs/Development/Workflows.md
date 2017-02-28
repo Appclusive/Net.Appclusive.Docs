@@ -15,14 +15,16 @@ The following points have to be considered when creating a design for an Activit
 
 ## Restrictions
 
-* An Activity cannot contain parts of the project namespace in its name (i.e. an `Activity` with name `Net.Appclusive.Workflows.ArbitryryActivity` will not compile, if the `ArbitryryActivity` resides in `Net.Appclusive.SomeProject`). Naming an `Activity` like `NetAppclusiveWorkflowsArbitraryActivity` is not a problem.
+* An Activity cannot contain parts of the project namespace in its name (i.e. an `Activity` with name `Net.Appclusive.Workflows.ArbitraryActivity` will not compile, if the `ArbitraryActivity` resides in `Net.Appclusive.SomeProject`). Naming an `Activity` like `NetAppclusiveWorkflowsArbitraryActivity` is not a problem.
 * When invoking an `Activity` based on its XAML definition the `Activity` first has to be loaded using `ActivityXamlServices`. Loading the `Activity` results in a instance of type `DynamicActivity`. This means, that the type of the `Activity` cannot be determined anymore. Because of that `WorkflowManagers` invoke method has to be called by passing the instance of the loaded `Activity` instead of the type. Otherwise the `WorkflowManager` will instantiate a new `DynamicActivity` without any Properties, Variables and Arguments.
 
 # Useful Links
 
 * [Getting started](https://code.msdn.microsoft.com/windowsapps/Windows-Workflow-deed2cd5)
-* [Howto create a workflow](https://msdn.microsoft.com/en-us/library/dd489437(VS.110).aspx)
-* [Howto run a workflow](https://msdn.microsoft.com/en-us/library/dd489463(VS.110).aspx)
-* [Howto create an activity](https://msdn.microsoft.com/en-us/library/dd489453(VS.110).aspx)
-* [Building dynamic activities](https://blogs.infosupport.com/building-dynamic-activities-in-workflow-foundation-4-part-3/)
-* [Associating a WF4 activity designer to a custom activity using MetadataStore](http://geekswithblogs.net/jkurtz/archive/2010/01/26/137639.aspx)
+* [Howto create a Workflow](https://msdn.microsoft.com/en-us/library/dd489437(VS.110).aspx)
+* [Howto run a Workflow](https://msdn.microsoft.com/en-us/library/dd489463(VS.110).aspx)
+* [Howto create an Activity](https://msdn.microsoft.com/en-us/library/dd489453(VS.110).aspx)
+* [Building dynamic Activities](https://blogs.infosupport.com/building-dynamic-activities-in-workflow-foundation-4-part-3/)
+* [Associating a WF4 Activity designer to a custom Activity using MetadataStore](http://geekswithblogs.net/jkurtz/archive/2010/01/26/137639.aspx)
+* [Workflow Persistence](https://msdn.microsoft.com/en-us/library/dd489420(v=vs.110).aspx)
+* [Howto enable Persistence for Workflows and Workflow Services](https://msdn.microsoft.com/en-us/library/ee829476(v=vs.110).aspx)
