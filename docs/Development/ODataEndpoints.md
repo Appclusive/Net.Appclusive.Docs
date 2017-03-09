@@ -4,7 +4,7 @@
 
 The following classes have to be implemented to expose functionality as OData service
 
-* `_ENTITY_` (Data entity class)
+* [Optional] `_ENTITY_` (Data entity class)
 * `_ENTITY_` (Public entity class)
 * `_ENTITY_ValidatorTest` (Test class for entity validator)
 * `_ENTITY_Validator` (Entity validator)
@@ -23,6 +23,8 @@ The following steps have only to be executed, if the `_ENTITY_` will be persiste
 
 * Register entity set in `ApcDbContext`
 * Add new migration by executing `Add-Migration MigrationName` in `Package Manager Console` of Visual Studio 2015
+
+There are two types of data entities, `DataEntity` and `SecuredEntity`. In contrast to `DataEntity` `SecuredEntity` contains a foreign key to an `Acl`.
 
 **Example**
 
@@ -74,7 +76,7 @@ namespace Net.Appclusive.Core.Domain._DOMAIN_
 {
     public class _ENTITY_Validator : BaseEntityValidator<_ENTITY_>
     {
-        public override KeyNameValue ForCreate(_ENTITY_ entityToBeCreated)
+        public override _ENTITY_ ForCreate(_ENTITY_ entityToBeCreated)
         {
             Contract.Requires(!string.IsNullOrWhiteSpace(entityToBeCreated.Value));
 
@@ -98,25 +100,26 @@ The public entity manager class resides in project `Net.Appclusive.Core` under `
 **Example**
 
 ```
-using System;
-using Net.Appclusive.Public.Domain._DOMAIN_;
+using TPublicEntity = Net.Appclusive.Public.Domain._DOMAIN_._ENTITY_;
+using TSecuredEntity = Net.Appclusive.Internal.Domain._DOMAIN_._ENTITY_;
 
 namespace Net.Appclusive.Core.Domain._DOMAIN_
 {
-    public partial class _ENTITY_Manager : BasePublicEntityDataManager<_ENTITY_, Internal.Domain._DOMAIN_._ENTITY_>
+    public partial class _ENTITY_Manager : PublicSecuredManagerBase<TPublicEntity, TSecuredEntity>
     {
-		public override ActionConfigurationMap ActionMap { get; } = ActionConfigurationMap.For<_ENTITY_Manager>();
-		
-        public _ENTITY_Manager(BaseDataEntityManager<Internal.Domain._DOMAIN_._ENTITY_> dataManager)
-        { 
+        public override ActionConfigurationMap ActionMap => ActionConfigurationMap.For<_ENTITY_Manager>();
+
+        public _ENTITY_Manager(ISecuredManagerBase<TSecuredEntity> manager) 
+            : base(manager)
+        {
             // there is nothing to do here
         }
 
-        public override _ENTITY_ Template()
+        public override TPublicEntity Template()
         {
             var template = base.Template();
 
-            template.Value = Model.ARBITRARY_STRING_VALUE;
+            template.Value = nameof(TPublicEntity.Value);
 
             return template;
         }
@@ -132,14 +135,14 @@ The ODataController resides in project `Net.Appclusive.WebApi` under `OdataServi
 
 ```
 using Net.Appclusive.Core.Domain;
-using Net.Appclusive.Public.Domain._DOMAIN_;
+using TPublicEntity = Net.Appclusive.Public.Domain._DOMAIN_._ENTITY_;
 
-namespace Net.Appclusive.WebApi.OdataServices._ENDPOINT_
+namespace Net.Appclusive.WebApi.OdataServices.Core
 {
-    public partial class _ENTITY_sController : CoreEndpointControllerBase<_ENTITY_>
+    public partial class _ENTITY_sController : CoreEndpointControllerBase<TPublicEntity>
     {
-        public _ENTITY_sController(IPublicEntityManager<_ENTITY_> entityManager)
-            : base(entityManager)
+        public _ENTITY_sController(IPublicManager<TPublicEntity> entityManager, AppclusiveODataValidationSettings validationSettings)
+            : base(entityManager, validationSettings)
         {
             // there is nothing to be done here
         }
@@ -156,17 +159,15 @@ The data entity manager class resides in project `Net.Appclusive.Core` under `Do
 ```
 using System;
 using Net.Appclusive.Core.Cache;
-using Net.Appclusive.Internal.Domain._DOMAIN_;
-using System.Diagnostics.Contracts;
-using Net.Appclusive.Public.Constants;
+using Net.Appclusive.Internal.Domain.Configuration;
 
-namespace Net.Appclusive.Core.Domain._DOMAIN_
+namespace Net.Appclusive.Core.Domain.Configuration
 {
-    public class _ENTITY_DataManager : BaseDataEntityManager<_ENTITY_>
+    public class _ENTITY_DataManager : SecuredManagerBase<_ENTITY_>
     {
-        public _ENTITY_DataManager(BaseDataEntityManagerCtorParams ctorParams)
-            : base(ctorParams)
-        { 
+        public _ENTITY_DataManager(DataManagerBaseContext ctx)
+            : base(ctx)
+        {
             // there is nothing to do here
         }
     }
