@@ -14,7 +14,7 @@ Archive
 
 API
 
-* first deaft
+* first draft
 
 Copyright clarification
 
