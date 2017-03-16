@@ -18,7 +18,10 @@ This page contains information about the setup of the development environment
 	
 	    `.\Add-ApcSpecialEntities.ps1 -ConnectionType LocalDB`
 
-
+	* Execute [`Add-ApcPermissions.ps1`](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/Add-ApcPermissions.ps1) in PowerShell console as follows
+		
+		`.\Add-ApcPermissions.ps1 -ConnectionType LocalDB`
+		
 * To add some demo data execute [`Add-ApcExampleData.ps1`](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/Add-ApcExampleData.ps1) in PowerShell console as follows
 	
 	`.\Add-ApcExampleData.ps1 -ConnectionType LocalDB`
