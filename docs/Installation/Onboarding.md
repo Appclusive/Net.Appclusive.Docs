@@ -1,4 +1,4 @@
-This page contains information about onboarding processes
+This page contains information about onboarding processes.
 
 # Tenant Onboarding
 
