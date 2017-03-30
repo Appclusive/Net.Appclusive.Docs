@@ -57,6 +57,7 @@ Invoke-RestMethod -Method Post -Uri "https://login.windows.net/d-fens.net/oauth2
 
 ## Call API with Bearer access token
 
+```
 $jwt = "BEARER_TOKEN;
 $bearerAuthHeader = "Bearer {0}" -f $jwt;
 
@@ -67,3 +68,4 @@ $headers = @{
 Invoke-RestMethod -Method Post -Uri "http://appclusive/api/Core/Authentications/BearerLogin" -Headers $headers;
 Invoke-RestMethod -Method Get -Uri "http://appclusive/api/Core/Users" -Headers $headers;
 Invoke-RestMethod -Method Post -Uri "http://appclusive/api/Core/Authentications/Logout" -Headers $headers;
+```
