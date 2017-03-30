@@ -3,7 +3,7 @@ This document describes the different authentication mechanisms to access the RE
 
 # Basic
 
-*Code sample**
+*Code sample*
 
 ```powershell
 $basicCredentials = "USERNAME:PASSWORD";
@@ -21,7 +21,7 @@ Invoke-RestMethod -Method Post -Uri "http://appclusive/api/Core/Authentications/
 
 # Negotiate
 
-*Code sample**
+*Code sample*
 
 ```powershell
 Invoke-RestMethod -Method Post -Uri "http://appclusive/api/Core/Authentications/NegotiateLogin" -UseDefaultCredentials;
