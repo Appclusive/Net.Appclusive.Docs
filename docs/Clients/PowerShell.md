@@ -4,6 +4,7 @@ Appclusive (R) provides a Microsoft PowerShell module which you can use to manag
 # Installation
 
 **Prerequisites:**
+
 * PowerShell 5
 
 The PowerShell client module is available on [NuGet](https://www.nuget.org/packages/Net.Appclusive.PS.Client/) and on [PowerShellGallery](https://www.powershellgallery.com/packages/Net.Appclusive.PS.Client)
@@ -16,6 +17,7 @@ To install the PowerShell client module from NuGet execute the following steps.
 1. Download [Net.Appclusive.PS.Client](https://www.nuget.org/packages/Net.Appclusive.PS.Client/) from [NuGet](https://www.nuget.org/)
 
 	`PS> PATH\TO\nuget.exe install Net.Appclusive.PS.Client`
+
 1. Execute `PS> PATH\TO\Net.Appclusive.PS.Client\Install.ps1`
 
 ## Install from PowerShellGallery
@@ -47,5 +49,3 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 
 
 # Enter Server
-
-
