@@ -1,5 +1,5 @@
 # Appclusive Documentation
-![Documentation](https://readthedocs.org/projects/pip/badge/)
+[![Documentation](https://readthedocs.org/projects/pip/badge/)](http://docs.appclusive.net/en/latest/)
 
 ![](Logo/Logo5black128.png)
 
