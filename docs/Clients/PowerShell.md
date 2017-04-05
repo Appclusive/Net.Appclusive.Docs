@@ -44,7 +44,7 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 
 	<net_Appclusive_PS_Client
 		apiBaseUri="http://appclusive.example.com/api"
-		credential="[bearer@auth.appclusive.net]|JWT_HERE"
+		credential="bearer@auth.appclusive.net|JWT_HERE"
 	/>
 
 
