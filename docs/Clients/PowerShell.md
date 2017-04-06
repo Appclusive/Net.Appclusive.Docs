@@ -36,14 +36,14 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 ## Basic Authentication
 
 	<net_Appclusive_PS_Client
-		apiBaseUri="http://appclusive.example.com/api"
+		apiBaseUri="http://appclusive/api"
 		credential="admin|p@ssw0rd"
 	/>
 
 ## JWT Authentication
 
 	<net_Appclusive_PS_Client
-		apiBaseUri="http://appclusive.example.com/api"
+		apiBaseUri="http://appclusive/api"
 		credential="bearer@auth.appclusive.net|JWT_HERE"
 	/>
 
@@ -74,7 +74,7 @@ Calling `Enter-Server` with the `UseModuleContext` switch means that the Cmdlet 
 ### Examples
 
 ```
-PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive.example.com/api' -Username admin -Password p@ssw0rd;
-PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive.example.com/api' -Credential Get-Credential;
+PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username admin -Password p@ssw0rd;
+PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
 PS> $services = Enter-ApcServer -UseModuleContext;
 ```
