@@ -51,3 +51,30 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 # Usage
 
 ## Login (Enter-Server)
+
+The `Enter-Server` Cmdlet performs a login to an Appclusive server. This is the first Cmdlet to be executed and required for all other Cmdlets of this module. It creates service references to the routers of the application. The `Enter-Server` Cmdlet defines the following parameter sets. 
+
+* plain
+
+  * Required parameters: `ApiBaseUri`, `Username` `Password` (Use `Username` = `bearer@auth.appclusive.net` for `Bearer` authentication)
+  * Optional parameters: `TenantId`
+
+* credential
+
+  * Required parameters: `ApiBaseUri`, `Credential` (Use `bearer@auth.appclusive.net` as username of the credential for `Bearer` authentication)
+  * Optional parameters: `TenantId`
+  
+* config
+
+  * Required parameters: `UseModuleContext`
+  * Optional parameters: `TenantId`
+  
+Calling `Enter-Server` with the `UseModuleContext` switch means that the Cmdlet loads the configuration (`ApiBaseUri` and `Credential`) from the config file (`C:\Program Files\WindowsPowerShell\Modules\Net.Appclusive.PS.Client\Net.Appclusive.PS.Client.config`).
+
+### Examples
+
+```
+PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive.example.com/api' -Username admin -Password p@ssw0rd;
+PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive.example.com/api' -Credential Get-Credential;
+PS> $services = Enter-ApcServer -UseModuleContext;
+```
