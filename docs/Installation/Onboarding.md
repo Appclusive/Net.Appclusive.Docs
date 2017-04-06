@@ -2,9 +2,8 @@ This page contains information about onboarding processes.
 
 # Tenant Onboarding
 
-Execute the following steps for every tenant that has to be onboarded.
+Execute the [New-Tenant.ps1](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/New-Tenant.ps1) script for every tenant that has to be onboarded.
 
-1. Execute [New-Tenant.ps1](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/New-Tenant.ps1)
     * `Id` = Id of the the corresponding tenant
     * `MappedId` = Id of the tenant in another system i.e. Azure
 	* `Namespace` = Namespace for tenant specific products
