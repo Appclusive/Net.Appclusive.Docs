@@ -74,7 +74,7 @@ Invoking `Enter-Server` with the `UseModuleContext` switch implies that the Cmdl
 ### Examples
 
 ```
-PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username admin -Password p@ssw0rd;
-PS> $services = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
-PS> $services = Enter-ApcServer -UseModuleContext;
+PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username admin -Password p@ssw0rd;
+PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
+PS> $svc = Enter-ApcServer -UseModuleContext;
 ```
