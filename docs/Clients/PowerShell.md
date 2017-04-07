@@ -14,18 +14,18 @@ The PowerShell client module is available on [NuGet](https://www.nuget.org/packa
 To install the PowerShell client module from NuGet execute the following steps.
 
 1. Open PowerShell
-1. Download [Net.Appclusive.PS.Client](https://www.nuget.org/packages/Net.Appclusive.PS.Client/) from [NuGet](https://www.nuget.org/)
+1. Install [Net.Appclusive.PS.Client](https://www.nuget.org/packages/Net.Appclusive.PS.Client/) from [NuGet](https://www.nuget.org/)
 
-	`PS> PATH\TO\nuget.exe install Net.Appclusive.PS.Client`
+	`PATH\TO\nuget.exe install Net.Appclusive.PS.Client`
 
-1. Execute `PS> PATH\TO\Net.Appclusive.PS.Client\Install.ps1`
+1. Execute `PATH\TO\Net.Appclusive.PS.Client\Install.ps1`
 
 ## Install from PowerShellGallery
 
 To install the PowerShell client module from PowerShellGallery execute the following steps.
 
 1. Open PowerShell
-1. Execute `PS> Install-Module -Name Net.Appclusive.PS.Client`
+1. Execute `Install-Module -Name Net.Appclusive.PS.Client`
 
 # Configuration
 
@@ -74,9 +74,11 @@ Invoking `Enter-Server` with the `UseModuleContext` switch implies that the Cmdl
 ### Code Samples
 
 ```
-PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
-PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
-PS> $svc = Enter-ApcServer -UseModuleContext;
+Import-Module Net.Appclusive.PS.Client
+
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
+$svc = Enter-ApcServer -UseModuleContext;
 ```
 
 ## Get Cmdlets
@@ -86,8 +88,11 @@ The Get Cmdlets can be used to retrieve available entities of the corresponding 
 ### Code Samples
 
 ```
-PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
-PS> Get-ApcTenant
+Import-Module Net.Appclusive.PS.Client
+
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+
+Get-ApcTenant
 
 Id          : 11111111-1111-1111-1111-111111111111
 Name        : SYSTEM_TENANT
@@ -101,7 +106,7 @@ Details     :
 Parent      :
 Children    : {}
 
-PS> Get-ApcTenant -Id 11111111-1111-1111-1111-111111111111
+Get-ApcTenant -Id 11111111-1111-1111-1111-111111111111
 
 
 Id          : 11111111-1111-1111-1111-111111111111
@@ -116,7 +121,7 @@ Details     :
 Parent      :
 Children    : {}
 
-PS> Get-ApcTenant -Name SYSTEM_TENANT
+Get-ApcTenant -Name SYSTEM_TENANT
 
 
 Id          : 11111111-1111-1111-1111-111111111111
@@ -130,4 +135,21 @@ CustomerId  : 0
 Details     :
 Parent      :
 Children    : {}
+```
+
+## Utility Methods
+
+The `Net.Appclusive.PS.Client` provides some C# utilty methods. These methods are extension methods and are not yet exposed as Cmdlets. The extension methods are there to simplify the usage of the Data Service Context.
+
+
+### Code Samples
+
+```
+Import-Module Net.Appclusive.PS.Client
+
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+
+$filterQuery = "Name eq 'TestUser'";
+[Net.Appclusive.Api.DataServiceQueryExtensions]::Filter($svc.Core.Users, $filterQuery);
+[Net.Appclusive.Api.DataServiceQueryExtensions]::Id($svc.Core.Users, 1);
 ```
