@@ -69,7 +69,7 @@ The `Enter-Server` Cmdlet performs a login to an Appclusive server. This is the 
     * Required parameters: `UseModuleContext`
     * Optional parameters: `TenantId`
   
-Calling `Enter-Server` with the `UseModuleContext` switch means that the Cmdlet loads the configuration (`ApiBaseUri` and `Credential`) from the config file (`C:\Program Files\WindowsPowerShell\Modules\Net.Appclusive.PS.Client\Net.Appclusive.PS.Client.config`).
+Invoking `Enter-Server` with the `UseModuleContext` switch implies that the Cmdlet `ApiBaseUri` and `Credential` will be loaded from the config file (`C:\Program Files\WindowsPowerShell\Modules\Net.Appclusive.PS.Client\Net.Appclusive.PS.Client.config`).
 
 ### Examples
 
