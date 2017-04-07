@@ -37,7 +37,7 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 
 	<net_Appclusive_PS_Client
 		apiBaseUri="http://appclusive/api"
-		credential="admin|p@ssw0rd"
+		credential="Arbitrary|p@ssw0rd"
 	/>
 
 ## JWT Authentication
@@ -71,10 +71,63 @@ The `Enter-Server` Cmdlet performs a login to an Appclusive server. This is the 
   
 Invoking `Enter-Server` with the `UseModuleContext` switch implies that the Cmdlet `ApiBaseUri` and `Credential` will be loaded from the config file (`C:\Program Files\WindowsPowerShell\Modules\Net.Appclusive.PS.Client\Net.Appclusive.PS.Client.config`).
 
-### Examples
+### Code Samples
 
 ```
-PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username admin -Password p@ssw0rd;
+PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
 PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
 PS> $svc = Enter-ApcServer -UseModuleContext;
+```
+
+## Get Cmdlets
+
+The Get Cmdlets can be used to retrieve available entities of the corresponding entity set or to get spcific entities by `Id` or `Name`.
+
+### Code Samples
+
+```
+PS> $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+PS> Get-ApcTenant
+
+Id          : 11111111-1111-1111-1111-111111111111
+Name        : SYSTEM_TENANT
+Description : SYSTEM_TENANT
+MappedId    : 11111111-1111-1111-1111-111111111111
+MappedType  : Internal
+ParentId    : 11111111-1111-1111-1111-111111111111
+Namespace   : Net.Appclusive
+CustomerId  : 0
+Details     :
+Parent      :
+Children    : {}
+
+PS> Get-ApcTenant -Id 11111111-1111-1111-1111-111111111111
+
+
+Id          : 11111111-1111-1111-1111-111111111111
+Name        : SYSTEM_TENANT
+Description : SYSTEM_TENANT
+MappedId    : 11111111-1111-1111-1111-111111111111
+MappedType  : Internal
+ParentId    : 11111111-1111-1111-1111-111111111111
+Namespace   : Net.Appclusive
+CustomerId  : 0
+Details     :
+Parent      :
+Children    : {}
+
+PS> Get-ApcTenant -Name SYSTEM_TENANT
+
+
+Id          : 11111111-1111-1111-1111-111111111111
+Name        : SYSTEM_TENANT
+Description : SYSTEM_TENANT
+MappedId    : 11111111-1111-1111-1111-111111111111
+MappedType  : Internal
+ParentId    : 11111111-1111-1111-1111-111111111111
+Namespace   : Net.Appclusive
+CustomerId  : 0
+Details     :
+Parent      :
+Children    : {}
 ```
