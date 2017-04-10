@@ -5,7 +5,7 @@ pages:
 - Introduction: Introduction.md
 - 'What''s new?': ReleaseNotes.md
 - Clients:
-    - 'Appclusive Clients': Clients/index.md
+    - Intro: Clients/index.md
     - PowerShell: Clients/PowerShell.md
     - 'C# .NET': Clients/CSharpDotNet.md
 - Processes: 
@@ -17,7 +17,7 @@ pages:
         - Blueprint: Endpoints/Core/Catalogue/Blueprint.md
         - Catalogue: Endpoints/Core/Catalogue/Catalogue.md
 - Examples:
-    - Examples: Examples/Examples.md
+    - Intro: Examples/index.md
     - Modelling: Examples/Modelling.md
 - Installation:
     - Installation: Installation/Installation.md
