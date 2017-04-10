@@ -5,9 +5,9 @@ pages:
 - Introduction: Introduction.md
 - About: about.md
 - 'What is new?': WhatsNew.md
-- Clients:
+- Clients: Clients/index.md
     - PowerShell: Clients/PowerShell.md
-- Processes: Clients/index.md
+- Processes: 
     - OrderProcess: Processes/OrderProcess.md
 - Endpoints:
     - Api: Endpoints/Api.md
