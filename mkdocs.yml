@@ -7,7 +7,7 @@ pages:
 - 'What is new?': WhatsNew.md
 - Clients:
     - PowerShell: Clients/PowerShell.md
-- Processes:
+- Processes: Clients/index.md
     - OrderProcess: Processes/OrderProcess.md
 - Endpoints:
     - Api: Endpoints/Api.md
