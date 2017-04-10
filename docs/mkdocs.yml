@@ -1,6 +1,0 @@
-site_name: Marshmallow Generator
-
-site_author: Edgar Schnittenfittich
-
-pages:
-    - 'Introduction': 'index.md'
