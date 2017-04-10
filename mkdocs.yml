@@ -12,8 +12,8 @@ pages:
     - Api: Endpoints/Api.md
     - Managers: Endpoints/Managers.md
     - Catalogue:
-        - Blueprint: Endpoints/Core/Blueprint.md
-        - Catalogue: Endpoints/Core/Catalogue.md
+        - Blueprint: Endpoints/Core/Catalogue/Blueprint.md
+        - Catalogue: Endpoints/Core/Catalogue/Catalogue.md
 - Examples:
     - Examples: Examples/Examples.md
     - Modelling: Examples/Modelling.md
