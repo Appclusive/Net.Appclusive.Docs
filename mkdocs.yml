@@ -5,9 +5,4 @@ pages:
 - 'About': 'about.md'
 - 'What is new?': 'WhatsNew.md'
 - Clients: 'Clients/!index.md'
-    PowerShell: Clients/PowerShell.md
-
-markdown_extensions:
-    - toc:
-        permalink: 
-    - admonition:
+    - PowerShell: Clients/PowerShell.md
