@@ -9,7 +9,8 @@ pages:
     - PowerShell: Clients/PowerShell.md
     - 'C# .NET': Clients/CSharpDotNet.md
 - Processes: 
-    - OrderProcess: Processes/OrderProcess.md
+    - Order: Processes/OrderProcess.md
+    - Approval: Processes/Approval.md
 - Endpoints:
     - Api: Endpoints/Api.md
     - Managers: Endpoints/Managers.md
