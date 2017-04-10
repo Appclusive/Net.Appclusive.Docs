@@ -34,4 +34,4 @@ The Appclusive software itself can be acquired and used under an [Apache 2.0](ht
 
 Copyright 2013-2017 [d-fens GmbH](http://d-fens.net), General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 
-Appclusive is a registered trademark in [Switzerland](https://www.swissreg.ch/srclient/tm/691777) and/or other countries.
+Appclusive and the Appclusive logo are a registered trademark in [Switzerland](https://www.swissreg.ch/srclient/tm/691777) and/or other countries.
