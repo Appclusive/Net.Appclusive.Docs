@@ -4,9 +4,9 @@ pages:
 - Home: index.md
 - Introduction: Introduction.md
 - About: about.md
-- 'What is new?': WhatsNew.md
+- 'What''s new?': WhatsNew.md
 - Clients:
-    - Contents: index.md
+    - Contents: Clients/index.md
     - PowerShell: Clients/PowerShell.md
 - Processes: 
     - OrderProcess: Processes/OrderProcess.md
