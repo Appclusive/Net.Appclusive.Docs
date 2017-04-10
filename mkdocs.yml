@@ -3,9 +3,9 @@ site_name: Appclusive Documentation
 pages:
 - Home: index.md
 - Introduction: Introduction.md
-- 'What''s new?': WhatsNew.md
+- 'What''s new?': ReleaseNotes.md
 - Clients:
-    - Contents: Clients/index.md
+    - 'Appclusive Clients': Clients/index.md
     - PowerShell: Clients/PowerShell.md
 - Processes: 
     - OrderProcess: Processes/OrderProcess.md
