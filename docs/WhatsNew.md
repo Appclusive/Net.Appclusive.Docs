@@ -8,13 +8,17 @@ Catalogue
 
 * moved existing documents to Catalogue folder
 
+Onboarding
+
+* documentation of tenant onboarding
+
+Security
+
+* authentication mechanisms described
+
 Archive
 
 * archived unneeded documents
-
-API
-
-* first draft
 
 Copyright clarification
 

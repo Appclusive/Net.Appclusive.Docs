@@ -1,6 +1,7 @@
 # Appclusive Documentation
+[![Documentation](https://readthedocs.org/projects/pip/badge/)](http://docs.appclusive.net/en/latest/)
 
-![](logo-128-128.png) 
+![](Logo/Logo5black128.png)
 
 This is the documentation for the [Appclusive Blueprint Modelling and Automation Engine](http://appclusive.net)
 
