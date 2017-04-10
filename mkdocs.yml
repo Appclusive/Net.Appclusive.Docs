@@ -7,7 +7,7 @@ pages:
 - Clients:
     - 'Appclusive Clients': Clients/index.md
     - PowerShell: Clients/PowerShell.md
-    - PowerShell: Clients/CSharpDotNet.md
+    - 'C# .NET': Clients/CSharpDotNet.md
 - Processes: 
     - OrderProcess: Processes/OrderProcess.md
 - Endpoints:

@@ -3,4 +3,4 @@ Appclusive provides an open REST API based on the [OData](http://odata.org) stan
 In addition to this API, Appclusive also provides several language specific clients:
 
 * [PowerShell](PowerShell/)
-* [C# .Net](DotNetCSharp/)
+* [C# .NET](CSharpDotNet/)
