@@ -1,29 +1,29 @@
 site_name: Appclusive Documentation
 
 pages:
-- Introduction: introduction.md
+- Introduction: Introduction.md
 - About: about.md
 - 'What is new?': WhatsNew.md
 - Clients:
     - PowerShell: Clients/PowerShell.md
 - Processes:
-    - OrderProcess: OrderProcess.md
+    - OrderProcess: Processes/OrderProcess.md
 - Endpoints:
-    - Api: Api.md
-    - Managers: Managers.md
+    - Api: Endpoints/Api.md
+    - Managers: Endpoints/Managers.md
     - Catalogue:
-        - Blueprint: Blueprint.md
-        - Catalogue: Catalogue.md
+        - Blueprint: Endpoints/Core/Blueprint.md
+        - Catalogue: Endpoints/Core/Catalogue.md
 - Examples:
-    - Examples: Examples.md
-    - Modelling: Modelling.md
+    - Examples: Examples/Examples.md
+    - Modelling: Examples/Modelling.md
 - Installation:
-    - Installation: Installation.md
-    - Onboarding: Onboarding.md
-    - Setup: Setup.md
-    - Troubleshooting: Troubleshooting.md
+    - Installation: Installation/Installation.md
+    - Onboarding: Installation/Onboarding.md
+    - Setup: Installation/Setup.md
+    - Troubleshooting: Installation/Troubleshooting.md
 - Development:
-    - BlueprintEngine: BlueprintEngine.md
-    - ODataEndpoints: ODataEndpoints.md
-    - Workflows: Workflows.md
+    - BlueprintEngine: Development/BlueprintEngine.md
+    - ODataEndpoints: Development/ODataEndpoints.md
+    - Workflows: Development/Workflows.md
 
