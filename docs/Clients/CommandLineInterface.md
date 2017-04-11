@@ -6,7 +6,7 @@ Coming soon
 
 # Usage
 
-After starting the CLI a manager has to be selected.
+After starting the CLI a manager can be selected as follows.
 
 ```
 manager Net.Appclusive.Core.Domain.Catalogue.CartItemManager
