@@ -1,5 +1,3 @@
-This page contains information about the initial installation of the various components of the Appclusive Blueprint Modelling and Automation Engine.
-
 # SQL Server
 
 ## Hardware Specification

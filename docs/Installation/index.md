@@ -1,12 +1,15 @@
 This section contains information about the following topics:
 
- * [Installation](Installation/)
- * [Setup](Setup/)
+* [Installation](Installation/)
 
-	Contains information about the initial provisioning of entities into the system
+	Contains information about the initial installation of the various components of the Appclusive Blueprint Modelling and Automation Engine
 
- * [Onboarding](Onboarding/)
+* [Setup](Setup/)
 
-	Contains information about the onboarding of tenants.
+	Contains information about the development environment setup and initial provisioning of entities into the system
 
- * [Troubleshooting](Troubleshooting/)
+* [Onboarding](Onboarding/)
+
+	Contains information about the onboarding processes.
+
+* [Troubleshooting](Troubleshooting/)
