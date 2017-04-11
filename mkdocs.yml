@@ -2,7 +2,6 @@ site_name: Appclusive Documentation
 
 pages:
 - Home: index.md
-- Introduction: Introduction.md
 - 'What''s new?': ReleaseNotes.md
 - Clients:
     - Intro: Clients/index.md
@@ -31,6 +30,9 @@ pages:
     - BlueprintEngine: Development/BlueprintEngine.md
     - ODataEndpoints: Development/ODataEndpoints.md
     - Workflows: Development/Workflows.md
+- Security:
+    - Intro: Security/index.md
+    - Authentication: Security/Authentication.md
 
 markdown_extensions:
     - toc:
