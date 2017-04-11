@@ -4,33 +4,34 @@ pages:
 - Home: index.md
 - 'What''s new?': ReleaseNotes.md
 - Clients:
-    - Intro: Clients/index.md
+    - Index: Clients/index.md
     - PowerShell: Clients/PowerShell.md
     - 'C# .NET': Clients/CSharpDotNet.md
 - Processes: 
-    - Intro: Processes/index.md
+    - Index: Processes/index.md
     - Order: Processes/OrderProcess.md
     - Approval: Processes/Approval.md
 - Endpoints:
-    - Intro: Endpoints/index.md
+    - Index: Endpoints/index.md
     - Api: Endpoints/Api.md
     - Managers: Endpoints/Managers.md
     - Catalogue:
         - Blueprint: Endpoints/Core/Catalogue/Blueprint.md
         - Catalogue: Endpoints/Core/Catalogue/Catalogue.md
 - Examples:
-    - Intro: Examples/index.md
+    - Index: Examples/index.md
     - Modelling: Examples/Modelling.md
 - Security:
-    - Intro: Security/index.md
+    - Index: Security/index.md
     - Authentication: Security/Authentication.md
 - Installation:
-    - Intro: Installation/index.md
+    - Index: Installation/index.md
     - Installation: Installation/Installation.md
     - Setup: Installation/Setup.md
     - Onboarding: Installation/Onboarding.md
     - Troubleshooting: Installation/Troubleshooting.md
 - Development:
+    - Index: Development/index.md
     - BlueprintEngine: Development/BlueprintEngine.md
     - ODataEndpoints: Development/ODataEndpoints.md
     - Workflows: Development/Workflows.md
