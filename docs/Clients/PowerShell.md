@@ -1,5 +1,4 @@
-Appclusive (R) provides a Microsoft PowerShell module which you can use to manage and work with the Appclusive API. This module is built on the DotNetCSharp client and acts as a convenience wrapper. For more information about the DotNetCSharp client see the documentation [.Net C# client](../DotNetCSharp/!index).
-
+Appclusive (R) provides a Microsoft PowerShell module which you can use to manage and work with the Appclusive API. This module is built on the [C# .NET Client](CSharpDotNet/) and acts as a convenience wrapper. For more information about the [C# .NET Client](CSharpDotNet/) see the documentation [.Net C# Client](../CSharpDotNet/).
 
 # Installation
 
@@ -26,6 +25,31 @@ To install the PowerShell client module from PowerShellGallery execute the follo
 
 1. Open PowerShell
 1. Execute `Install-Module -Name Net.Appclusive.PS.Client`
+
+## Install from Project
+
+To install the PowerShell client module during development without releasing on [NuGet](https://www.nuget.org/) execute the following commands in PowerShell console.
+
+```PoSH
+# change to Downloads directory of current user
+$downloadsDirectory = "$env:USERPROFILE\Downloads";
+cd $downloadsDirectory;
+ls -Recurse * | Remove-Item -Recurse -Force;
+
+# install dependent NuGet packages
+nuget install biz.dfch.CS.Commons -version 1.12.0;
+nuget install biz.dfch.CS.PowerShell.Commons -version 2.0.0;
+nuget install Microsoft.Data.Edm -version 5.6.4;
+nuget install Microsoft.Data.OData -version 5.6.4;
+nuget install Microsoft.Data.Services.Client -version 5.6.4;
+nuget install System.Linq.Dynamic -version 1.0.7;
+nuget install System.Spatial -version 5.6.4;
+
+# create and install NuGet package Net.Appclusive.PS.Client
+nuget pack C:\src\Net.Appclusive.Net.Client\src\Net.Appclusive.PS.Client.nuspec;
+nuget install Net.Appclusive.PS.Client -Source $downloadsDirectory -OutputDirectory packages;
+.\packages\Net.Appclusive.PS.Client.4.0.0\Install.ps1;
+```
 
 # Configuration
 
