@@ -21,18 +21,19 @@ pages:
 - Examples:
     - Intro: Examples/index.md
     - Modelling: Examples/Modelling.md
+- Security:
+    - Intro: Security/index.md
+    - Authentication: Security/Authentication.md
 - Installation:
+    - Intro: Installation/index.md
     - Installation: Installation/Installation.md
-    - Onboarding: Installation/Onboarding.md
     - Setup: Installation/Setup.md
+    - Onboarding: Installation/Onboarding.md
     - Troubleshooting: Installation/Troubleshooting.md
 - Development:
     - BlueprintEngine: Development/BlueprintEngine.md
     - ODataEndpoints: Development/ODataEndpoints.md
     - Workflows: Development/Workflows.md
-- Security:
-    - Intro: Security/index.md
-    - Authentication: Security/Authentication.md
 
 markdown_extensions:
     - toc:
