@@ -8,7 +8,7 @@ This is the documentation for the [Appclusive Blueprint Modelling and Automation
 The documentation is located under [docs](/docs) and published to [ReadTheDocs](http://docs.appclusive.net). Normally you will find two versions:
 
 1. [**latest**](http://docs.appclusive.net/en/latest), which contains the current version version (taken from the `master` branch)
-2. [**develop**](http://docs.appclusive.net/develop), which holds the pre-release content of the next version (taken from the `develop` branch)
+2. [**develop**](http://docs.appclusive.net/en/develop), which holds the pre-release content of the next version (taken from the `develop` branch)
 
 For every major version we release, we will create a separate version (following the [semver](http://semver.org) scheme). The next published version to expect is `4.0.0` (which we expect for end of 2017Q1).
 
