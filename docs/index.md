@@ -1,4 +1,4 @@
-![](./media/logo-128-128.png)
+![](media/logo-128-128.png)
 
 **This is the documentation for the [Appclusive&reg; Blueprint Modelling and Automation Engine](https://github.com/Appclusive)**
 
@@ -27,11 +27,11 @@ Information about the setup, installation and troubleshooting can be found [here
 # Versions and Updates
 
 * see [What's new?](ReleaseNotes/) for latest changes
-* for the latest vesion of this documentation, make sure you check the [develop](../develop/) branch of this documentation
+* for the latest vesion of this documentation, make sure you check the [develop](.develop/) branch of this documentation
 
-[![](./media/Twitter_Logo_White_On_Blue.png)](https://twitter.com/appclusive) 
-[![](./media/GitHub-Mark-32px.png)](https://github.com/Appclusive) 
-[![](./media/wordpress-logo-32-blue.png)](https://d-fens.net) 
+[![](media/Twitter_Logo_White_On_Blue.png)](https://twitter.com/appclusive) 
+[![](media/GitHub-Mark-32px.png)](https://github.com/Appclusive) 
+[![](media/wordpress-logo-32-blue.png)](https://d-fens.net) 
 
 # Copyright
 
