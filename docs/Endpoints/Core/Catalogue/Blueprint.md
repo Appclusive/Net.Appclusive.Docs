@@ -1,7 +1,7 @@
 A `Blueprint` wraps one or more `Models` so they can be made available in a `Catalogue` and be ordered and provisioned. There are two types of `Blueprints`:
 
 * Basic
-* Composite (? Advanced ?)
+* Composite
 
 # Simple
 
@@ -13,7 +13,7 @@ A *simple* `Blueprint` wraps and describes only a single `Model`. This means tha
 
 A *composite* `Blueprint` wraps an arbitrary number of `Models` and/or other `Blueprints` into a single `Blueprint`. Therefore a *Composite* `Blueprint` can have a combination of input parameters that may be mapped to any `Model` attributes in any form that are required by the `Models`.
 
-In addition the `Blueprint` designer may modify and map `Blueprint` input parameters in any way that he seems fit for that purpose. It is also possible to let a `Blueprint` define an input parameter that is used as a basis for other `Model` attributes, eg:
+In addition the `Blueprint` designer may modify and map `Blueprint` input parameters in any way that she seems fit for that purpose. It is also possible to let a `Blueprint` define an input parameter that is used as a basis for other `Model` attributes, eg:
 
 ```
 define input parameter 'com.example.Blueprint1.Size' := { S, M, L }
@@ -36,10 +36,12 @@ switch 'com.example.Appclusive.Product1.Size'
 }
 ```
 
-... where the attribute `com.example.VirtualMachine.CpuCount` and `com.example.VirtualMachine.MemoryGb` are specific attributes of a `Model` called `com.example.VirtualMachine` which the `Blueprint` whishes to make available for order.
+... where the attribute `com.example.VirtualMachine.CpuCount` and `com.example.VirtualMachine.MemoryGb` are specific attributes of a `Model` called `com.example.V001.VirtualMachine` which the `Blueprint` whishes to make available for order.
 
 The following image shows an example of a composite blueprint where several *shapes* are provisioned as part of a larger `Blueprint`:
 
 ![](CompositeBlueprint.png)
 
-This `Blueprint` would be provided by the designer of the respectives `Model`s. The designer of the `Blueprint` is free to add an initial `Approval` step and handle the `Approval` once for all related entities. Each invocation of a simple blueprint will also trigger an `Approval` step in case the respective approval attributes are still present in the configuration.
+This `Blueprint` would be provided by the designer of the respectives `Models`. The designer of the `Blueprint` is free to add an initial `Approval` step and handle the `Approval` once for all related entities. Each invocation of a simple blueprint will also trigger an `Approval` step in case the respective approval attributes are still present in the configuration.
+
+For more technical information about `Blueprints` see the information about the [Blueprint Engine](../../../Development/BlueprintEngine).
