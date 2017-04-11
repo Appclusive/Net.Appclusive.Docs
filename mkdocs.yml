@@ -6,6 +6,7 @@ pages:
 - Clients:
     - Index: Clients/index.md
     - '.NET': Clients/CSharpDotNet.md
+    - 'Command Line Interface': Clients/CommandLineInterface.md
     - PowerShell: Clients/PowerShell.md
 - Processes: 
     - Index: Processes/index.md

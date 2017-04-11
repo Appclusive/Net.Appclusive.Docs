@@ -4,4 +4,4 @@ If you prefer to work with a higher-level client, have a look at the [PowerShell
 
 # Installation
 
-You can use [NuGet](https://www.nuget.org) and run [`install-package Net.Appclusive.Net.Client`](https://www.nuget.org/packages/Net.Appclusive.Net.Client/) to install the assembly into your project.
+You can use [NuGet](https://www.nuget.org) and run [`Install-Package Net.Appclusive.Net.Client`](https://www.nuget.org/packages/Net.Appclusive.Net.Client/) to install the assembly into your project.
