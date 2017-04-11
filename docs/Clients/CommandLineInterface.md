@@ -6,10 +6,10 @@ Coming soon
 
 # Usage
 
-After starting the CLI a manager has to be selected.
+After starting the CLI a manager can be selected as follows.
 
 ```
 manager Net.Appclusive.Core.Domain.Catalogue.CartItemManager
 ```
 
-To query entities via the corresponding manager call `list`. To close the CLI enter `exit`.
+To query entities via the corresponding manager enter `list`. To close the CLI enter `exit`.
