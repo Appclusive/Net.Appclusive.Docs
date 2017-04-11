@@ -6,7 +6,7 @@ This section contains information about the following topics:
 
 * [Setup](Setup/)
 
-	Contains information about the initial provisioning of entities into the system
+	Contains information about the development environment setup and initial provisioning of entities into the system
 
 * [Onboarding](Onboarding/)
 
