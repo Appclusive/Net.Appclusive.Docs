@@ -26,13 +26,13 @@ An `Approval` can hold either of the following expiration values:
 
 ## AbsoluteExpiration
 
-With this expiration option, the `Approval` will expire at a specified `DateTimeOffset` expressed in `Ticks` (where each `Tick` is a `100ns` interval). An example could be the end of a year, such as `2018-01-01`, wich would be `636503616000000000` ticks.
+With this expiration option, the `Approval` will expire at a specified `DateTimeOffset` expressed in `Ticks` (where each `Tick` is a `100ns` interval). An example could be the end of a year, such as `2018-01-01`, which would be `636503616000000000` ticks.
  
 ## RelativeExpiration
 
 With this expiration option, the `Approval` will expire after a specified `TimeRange` expressed in `Ticks` (where each `Tick` is a `100ns` interval) which is calculated from the time the `Approval` was created. A typical example for this might be an approval that should be cancelled (i.e. `Declined`) after 4 weeks without being `Approved`, which would be `24192000000000` ticks.
 
-Hint: an easy ways to calculate `Ticks` is to use PowerShell and `[timespan]::FromDays(3)` or one of the other static methods:
+Hint: an easy way to calculate `Ticks` is to use PowerShell and `[timespan]::FromDays(3)` or one of the other static methods:
 
 	Name             Definition
 	----             ----------
