@@ -1,5 +1,3 @@
-This page contains information about the setup of the development environment
-
 * Checkout the following repositories to `C:\src`
     * [Net.Appclusive](https://github.com/dfensgmbh/Net.Appclusive/)
     * [Net.Appclusive.Blueprints](https://github.com/Appclusive/Net.Appclusive.Blueprints)

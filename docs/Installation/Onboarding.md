@@ -1,5 +1,3 @@
-This page contains information about onboarding processes.
-
 # Tenant Onboarding
 
 Execute the [New-Tenant.ps1](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/New-Tenant.ps1) script for every tenant that has to be onboarded.
