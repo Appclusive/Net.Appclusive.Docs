@@ -14,6 +14,8 @@ Appclusive supports different authentication mechanisms independent of the under
 
 Appclusive does not act as an Identity Provider but relies on external systems to provide that functionality.
 
+For more information about Authentication see the chapter about [Security](../Security).
+
 # Uri Format
 
 Appclusive distributes its functionality across several separate *endpoints*:
