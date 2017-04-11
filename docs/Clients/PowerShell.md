@@ -137,6 +137,16 @@ Parent      :
 Children    : {}
 ```
 
+## New Cmdlets
+
+The New Cmdlets can be used to create entities of the corresponding entity set.
+
+### Code Samples
+
+```
+Code HERE
+```
+
 ## Utility Methods
 
 The `Net.Appclusive.PS.Client` provides some C# utilty methods. These methods are extension methods and are not yet exposed as Cmdlets. The extension methods are there to simplify the usage of the Data Service Context.
