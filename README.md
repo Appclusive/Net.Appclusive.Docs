@@ -5,7 +5,7 @@
 
 This is the documentation for the [Appclusive Blueprint Modelling and Automation Engine](http://appclusive.net)
 
-The documentation is located under [src](/src) and published to [ReadTheDocs](http://docs.appclusive.net). Normally you will find two versions:
+The documentation is located under [docs](/docs) and published to [ReadTheDocs](http://docs.appclusive.net). Normally you will find two versions:
 
 1. [**latest**](http://docs.appclusive.net/en/latest), which contains the current version version (taken from the `master` branch)
 2. [**develop**](http://docs.appclusive.net/develop), which holds the pre-release content of the next version (taken from the `develop` branch)
