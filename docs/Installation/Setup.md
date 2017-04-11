@@ -22,7 +22,6 @@
     `.\Add-ApcSpecialEntities.ps1 -ConnectionType LocalDB`
 
 1. Execute [`Add-ApcCrudPermissions.ps1`](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/Add-ApcCrudPermissions.ps1) in PowerShell console as follows
-
 	`.\Add-ApcCrudPermissions.ps1 -ConnectionType LocalDB`
 
 To add some demo data execute [`Add-ApcExampleData.ps1`](https://github.com/Appclusive/Net.Appclusive.Setup/blob/develop/src/Add-ApcExampleData.ps1) in PowerShell console as follows
