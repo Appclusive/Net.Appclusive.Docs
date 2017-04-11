@@ -16,4 +16,4 @@ For every major version we release, we will create a separate version (following
 
 Copyright 2013-2017 [d-fens GmbH](http://d-fens.net), General-Guisan-Strasse 6, CH-6300 Zug, Switzerland
 
-[Appclusive](https://www.swissreg.ch/srclient/tm/691777) is a registered trademark in Switzerland and/or other countries.
+[Appclusive](https://www.swissreg.ch/srclient/tm/691777) and the [Appclusive logo](https://www.swissreg.ch/srclient/tm/700433) are a registered trademarks in Switzerland and/or other countries.
