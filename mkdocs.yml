@@ -9,9 +9,11 @@ pages:
     - PowerShell: Clients/PowerShell.md
     - 'C# .NET': Clients/CSharpDotNet.md
 - Processes: 
+    - Intro: Processes/index.md
     - Order: Processes/OrderProcess.md
     - Approval: Processes/Approval.md
 - Endpoints:
+    - Intro: Endpoints/index.md
     - Api: Endpoints/Api.md
     - Managers: Endpoints/Managers.md
     - Catalogue:
@@ -29,7 +31,6 @@ pages:
     - BlueprintEngine: Development/BlueprintEngine.md
     - ODataEndpoints: Development/ODataEndpoints.md
     - Workflows: Development/Workflows.md
-
 
 markdown_extensions:
     - toc:

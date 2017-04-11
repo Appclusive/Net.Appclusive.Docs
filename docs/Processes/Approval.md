@@ -1,4 +1,6 @@
-Appclusive provides a freely configurable 16 level approval process (yes, you can implement a 32-eye approval with that - enough for most use cases we can think of). An `Approval` is a mechanism that can be freely defined to control certain interactions of users such as *Order Processes*. Approvals will then suspend the respective process or action and wait until the `Approver` will `Approve` or `Decline` the `Approval`. Only when an `Approval` is `Approved` the corresponding process or action will be resumed and execution can continue. 
+Appclusive provides a freely configurable 16 level approval process (yes, you can implement a 32-eye approval with that - enough for most use cases we can think of). 
+
+An `Approval` is a mechanism that can be freely defined to control certain interactions of users such as *Order Processes*. Approvals will then suspend the respective process or action and wait until the `Approver` will `Approve` or `Decline` the `Approval`. Only when an `Approval` is `Approved` the corresponding process or action will be resumed and execution can continue. 
 
 # ApprovalTypes
 
