@@ -5,8 +5,8 @@ pages:
 - 'What''s new?': ReleaseNotes.md
 - Clients:
     - Index: Clients/index.md
+    - '.NET': Clients/CSharpDotNet.md
     - PowerShell: Clients/PowerShell.md
-    - 'C# .NET': Clients/CSharpDotNet.md
 - Processes: 
     - Index: Processes/index.md
     - Order: Processes/OrderProcess.md
