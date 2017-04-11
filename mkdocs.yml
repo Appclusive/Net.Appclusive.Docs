@@ -33,6 +33,7 @@ pages:
 - Development:
     - Index: Development/index.md
     - BlueprintEngine: Development/BlueprintEngine.md
+    - 'Net.Appclusive.Net.Client': Development/NetAppclusiveNetClient.md
     - ODataEndpoints: Development/ODataEndpoints.md
     - Workflows: Development/Workflows.md
 
