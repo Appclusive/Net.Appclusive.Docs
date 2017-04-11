@@ -9,7 +9,7 @@ pages:
     - PowerShell: Clients/PowerShell.md
 - Processes: 
     - Index: Processes/index.md
-    - Order: Processes/OrderProcess.md
+    - Order: Processes/Order.md
     - Approval: Processes/Approval.md
 - Endpoints:
     - Index: Endpoints/index.md
