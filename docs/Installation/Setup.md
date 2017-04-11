@@ -5,7 +5,7 @@ This page contains information about the setup of the development environment
     * [Net.Appclusive.Blueprints](https://github.com/Appclusive/Net.Appclusive.Blueprints)
     * [Net.Appclusive.Examples](https://github.com/Appclusive/Net.Appclusive.Examples)
     * [Net.Appclusive.Public](https://github.com/Appclusive/Net.Appclusive.Public)
-* Perform the following steps for each of the before mentioned projects
+* Perform the following steps for each of the before mentioned repositories
     * Open solution in Visual Studio 2015
     * Build solution
     * Import strong name key according blog post [`Use Strong Name Key on TeamCity for Digital Signature`](https://d-fens.ch/2016/10/18/use-strong-name-key-on-teamcity-for-digital-signature/)
