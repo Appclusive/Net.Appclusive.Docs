@@ -59,11 +59,14 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 
 ## Basic Authentication
 
+Username without domain
+
 	<net_Appclusive_PS_Client
 		apiBaseUri="http://appclusive/api"
 		credential="Arbitrary|p@ssw0rd"
 	/>
 
+Username with domain
 
 	<net_Appclusive_PS_Client
 		apiBaseUri="http://appclusive/api"
@@ -107,6 +110,7 @@ Invoking `Enter-Server` with the `UseModuleContext` switch implies that the Cmdl
 Import-Module Net.Appclusive.PS.Client
 
 $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username "Mydomain\\Arbitrary" -Password p@ssw0rd;
 $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
 $svc = Enter-ApcServer -UseModuleContext;
 ```
