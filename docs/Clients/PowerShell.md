@@ -64,6 +64,7 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 		credential="Arbitrary|p@ssw0rd"
 	/>
 
+
 	<net_Appclusive_PS_Client
 		apiBaseUri="http://appclusive/api"
 		credential="MyDomain\Arbitrary|p@ssw0rd"
