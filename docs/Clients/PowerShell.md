@@ -59,9 +59,18 @@ The Appclusive API base URI and the credential to be used by the PowerShell clie
 
 ## Basic Authentication
 
+Username without domain
+
 	<net_Appclusive_PS_Client
 		apiBaseUri="http://appclusive/api"
-		credential="Arbitrary|p@ssw0rd"
+		credential="Arbitrary|P@ssw0rd"
+	/>
+
+Username with domain
+
+	<net_Appclusive_PS_Client
+		apiBaseUri="http://appclusive/api"
+		credential="MyDomain\Arbitrary|P@ssw0rd"
 	/>
 
 ## JWT Authentication
@@ -80,18 +89,27 @@ The `Enter-Server` Cmdlet performs a login to an Appclusive server. This is the 
 
 * plain
 
-    * Required parameters: `ApiBaseUri`, `Username` `Password` (Use `Username` = `bearer@auth.appclusive.net` for `Bearer` authentication)
-    * Optional parameters: `TenantId`
+    * Required parameters
+		* `ApiBaseUri`
+		* `Username`
+		* `Password` (Use `Username` = `bearer@auth.appclusive.net` for `Bearer` authentication)
+    * Optional parameters
+		* `TenantId`
 
 * credential
 
-    * Required parameters: `ApiBaseUri`, `Credential` (Use `bearer@auth.appclusive.net` as username of the credential for `Bearer` authentication)
-    * Optional parameters: `TenantId`
+    * Required parameters
+		* `ApiBaseUri`
+		* `Credential` (Use `bearer@auth.appclusive.net` as username of the credential for `Bearer` authentication)
+    * Optional parameters
+		* `TenantId`
   
 * config
 
-    * Required parameters: `UseModuleContext`
-    * Optional parameters: `TenantId`
+    * Required parameters
+		* `UseModuleContext`
+    * Optional parameters
+		* `TenantId`
   
 Invoking `Enter-Server` with the `UseModuleContext` switch implies that the Cmdlet `ApiBaseUri` and `Credential` will be loaded from the config file (`C:\Program Files\WindowsPowerShell\Modules\Net.Appclusive.PS.Client\Net.Appclusive.PS.Client.config`).
 
@@ -100,7 +118,8 @@ Invoking `Enter-Server` with the `UseModuleContext` switch implies that the Cmdl
 ```
 Import-Module Net.Appclusive.PS.Client
 
-$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password P@ssw0rd;
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username "Mydomain\Arbitrary" -Password P@ssw0rd;
 $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Credential Get-Credential;
 $svc = Enter-ApcServer -UseModuleContext;
 ```
@@ -114,7 +133,7 @@ The Get Cmdlets can be used to retrieve available entities of the corresponding 
 ```
 Import-Module Net.Appclusive.PS.Client
 
-$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password P@ssw0rd;
 
 Get-ApcTenant
 
@@ -181,7 +200,7 @@ The `Net.Appclusive.PS.Client` provides some C# utilty methods. These methods ar
 ```
 Import-Module Net.Appclusive.PS.Client
 
-$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password p@ssw0rd;
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password P@ssw0rd;
 
 $filterQuery = "Name eq 'TestUser'";
 [Net.Appclusive.Api.DataServiceQueryExtensions]::Filter($svc.Core.Users, $filterQuery);
