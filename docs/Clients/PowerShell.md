@@ -192,6 +192,16 @@ Import-Module Net.Appclusive.PS.Client
 $svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password P@ssw0rd;
 
 New-ApcAcl -Name ArbitraryAcl -ParentId 1 -Svc $svc;
+
+ParentId      : 1
+NoInheritance : False
+Id            : 13
+Name          : ArbitraryAcl
+Description   :
+Parent        :
+Children      : {}
+Aces          : {}
+Details       :
 ```
 
 ## Utility Methods
