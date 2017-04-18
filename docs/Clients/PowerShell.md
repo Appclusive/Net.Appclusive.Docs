@@ -187,7 +187,11 @@ The New Cmdlets can be used to create entities of the corresponding entity set.
 ### Code Samples
 
 ```
-Code HERE
+Import-Module Net.Appclusive.PS.Client
+
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password P@ssw0rd;
+
+New-ApcAcl -Name ArbitraryAcl -ParentId 1 -Svc $svc;
 ```
 
 ## Utility Methods
