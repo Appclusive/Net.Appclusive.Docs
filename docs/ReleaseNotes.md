@@ -2,16 +2,16 @@
 
 ## Approval Process
 
-We added the [description of the Approval mechanisms and process](Processes/Approval/).
+We added the [description of the Approval mechanisms and process](Processes/Approval/)
 
 ## Clients
 
-* We added a manual for the [Appclusive PowerShell Client](Clients/PowerShell/).
-* We added a first draft of the [Command Line Interface manual](Clients/CommandLineInterface/).
+* documentation for the [Appclusive PowerShell Client](Clients/PowerShell/)
+* first draft of the [Command Line Interface manual](Clients/CommandLineInterface/)
 
 ## Development
 
-We added [development manual for Net.Appclusive.Net.Client](Development/NetAppclusiveNetClient/).
+[development manual for Net.Appclusive.Net.Client](Development/NetAppclusiveNetClient/) added
 
 # 2017-04-07
 
