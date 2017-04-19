@@ -11,7 +11,7 @@ We added the [description of the Approval mechanisms and process](Processes/Appr
 
 ## Development
 
-[development manual for Net.Appclusive.Net.Client](Development/NetAppclusiveNetClient/) added
+[Development manual for Net.Appclusive.Net.Client](Development/NetAppclusiveNetClient/) added
 
 # 2017-04-07
 
