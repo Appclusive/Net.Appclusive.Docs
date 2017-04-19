@@ -1,4 +1,4 @@
-# 2017-04-11
+# 2017-04-19
 
 ## Approval Process
 
@@ -6,7 +6,8 @@ We added the [description of the Approval mechanisms and process](Processes/Appr
 
 ## Clients
 
-We added a first draft of the [Command Line Interface manual](Clients/CommandLineInterface/).
+* We added a manual for the [Appclusive PowerShell Client](Clients/PowerShell/).
+* We added a first draft of the [Command Line Interface manual](Clients/CommandLineInterface/).
 
 ## Development
 

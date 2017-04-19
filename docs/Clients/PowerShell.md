@@ -10,7 +10,7 @@ The PowerShell client module is available on [NuGet](https://www.nuget.org/packa
 
 ## Install from NuGet
 
-To install the PowerShell client module from NuGet execute the following steps.
+To install the most recent version of the PowerShell client module from NuGet execute the following steps.
 
 1. Open PowerShell
 1. Install [Net.Appclusive.PS.Client](https://www.nuget.org/packages/Net.Appclusive.PS.Client/) from [NuGet](https://www.nuget.org/)
@@ -21,7 +21,7 @@ To install the PowerShell client module from NuGet execute the following steps.
 
 ## Install from PowerShellGallery
 
-To install the PowerShell client module from PowerShellGallery execute the following steps.
+To install the most recent version of the PowerShell client module from PowerShellGallery execute the following steps.
 
 1. Open PowerShell
 1. Execute `Install-Module -Name Net.Appclusive.PS.Client`
@@ -187,7 +187,21 @@ The New Cmdlets can be used to create entities of the corresponding entity set.
 ### Code Samples
 
 ```
-Code HERE
+Import-Module Net.Appclusive.PS.Client
+
+$svc = Enter-ApcServer -ApiBaseUri 'http://appclusive/api' -Username Arbitrary -Password P@ssw0rd;
+
+New-ApcAcl -Name ArbitraryAcl -ParentId 1 -Svc $svc;
+
+ParentId      : 1
+NoInheritance : False
+Id            : 13
+Name          : ArbitraryAcl
+Description   :
+Parent        :
+Children      : {}
+Aces          : {}
+Details       :
 ```
 
 ## Utility Methods
