@@ -24,7 +24,9 @@ To install the most recent version of the PowerShell client module from NuGet ex
 To install the most recent version of the PowerShell client module from PowerShellGallery execute the following steps.
 
 1. Open PowerShell
-1. Execute `Install-Module -Name Net.Appclusive.PS.Client`
+1. Execute `Install-Module -Name Net.Appclusive.PS.Client -AllowClobber`
+
+The `AllowClobber` switch avoids the error during installation that a command with name `Enter-Server` is already available on the system. As an alias (`Apc`) is specified the error message can be ignored. 
 
 ## Install from Project
 
