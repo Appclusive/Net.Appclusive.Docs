@@ -199,7 +199,7 @@ ParentId      : 1
 NoInheritance : False
 Id            : 13
 Name          : ArbitraryAcl
-Description   :
+Description   : ArbitraryAcl
 Parent        :
 Children      : {}
 Aces          : {}
