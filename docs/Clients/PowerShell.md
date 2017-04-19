@@ -126,7 +126,7 @@ $svc = Enter-ApcServer -UseModuleContext;
 
 ## Get Cmdlets
 
-The Get Cmdlets can be used to retrieve available entities of the corresponding entity set or to get spcific entities by `Id` or `Name`.
+The Get Cmdlets can be used to retrieve available entities of the corresponding entity set or to get specific entities by `Id` or `Name`.
 
 ### Code Samples
 
