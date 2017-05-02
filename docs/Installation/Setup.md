@@ -2,6 +2,7 @@
 
 1. Checkout the following repositories to `C:\src`
     * [Net.Appclusive](https://github.com/dfensgmbh/Net.Appclusive/)
+    * [Net.Appclusive.Attributes](https://github.com/Appclusive/Net.Appclusive.Attributes)
     * [Net.Appclusive.Blueprints](https://github.com/Appclusive/Net.Appclusive.Blueprints)
     * [Net.Appclusive.Examples](https://github.com/Appclusive/Net.Appclusive.Examples)
     * [Net.Appclusive.Public](https://github.com/Appclusive/Net.Appclusive.Public)
