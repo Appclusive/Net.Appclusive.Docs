@@ -12,12 +12,12 @@ As an example the functionality for the `KeyNameValue` entities is contained in 
 * Delete entity
 * Return default entity
 
-Every manager can expose additional actions by defining nested classes that either derive from `PublicEntityManagerEntityActionBase` for operating on a single entity or from `PublicEntityManagerEntitySetActionBase` for operating on the complete entity set. Every ODATA Controller will automatically map these actions to ODATA actions (including the geneation of the complete model builder).
+Every manager can expose additional actions by defining nested classes that either derive from `EntityActionBase` for operating on a single entity or from `EntitySetActionBase` for operating on the complete entity set. Every ODATA Controller will automatically map these actions to ODATA actions (including the geneation of the complete model builder).
 
 For other environments, such as the *CLI* (the Appclusive Command Line Interface sample implementation), the respective application will have to scan the available managers and expose their functionality accordingly.
 
-Each manager must implement the `IPublicEntityManager` interface to be recognised as such. There are two default base implementations available depending on the aim of the manager:
+Each manager must implement the `IPublicManager` interface implicitly to be recognised as such. There are multiple default base implementations available depending on the aim of the manager:
 
-1. `BasePublicEntityDataManager`. This manager is used for entities that should be persisted to the data layer. E.g. `KeyNameValueManager`.
-
-2. `BasePublicEntityMemoryManager`. This manager is used for entities that only live in memory or aggregate information from several persisted entity sets. E.g. `HealthCheckManager`. 
+1. `SecuredManagerBase`. This manager is used for entities that should be persisted to the data layer and that will be secured with `Acl` and `Ace`. E.g. `KeyNameValueManager`.
+1. `PublicDataManagerBase`. This manager is used for entities that should be persisted to the data layer. E.g. `CatalogueItemManager`.
+1. `PublicMemoryManagerBase`. This manager is used for entities that only live in memory or aggregate information from several persisted entity sets. E.g. `HealthCheckManager`. 
