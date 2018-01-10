@@ -31,7 +31,7 @@ The following points have to be considered when creating a design for an Activit
 ## Restrictions
 
 * An Activity cannot contain parts of the project namespace in its name (i.e. an `Activity` with name `Net.Appclusive.Workflows.ArbitraryActivity` will not compile, if the `ArbitraryActivity` resides in `Net.Appclusive.SomeProject`). Naming an `Activity` like `NetAppclusiveWorkflowsArbitraryActivity` is not a problem.
-* When invoking an `Activity` based on its XAML definition the `Activity` first has to be loaded using `ActivityXamlServices`. Loading the `Activity` results in a instance of type `DynamicActivity`. This means, that the type of the `Activity` cannot be determined anymore. Because of that `WorkflowManagers` invoke method has to be called by passing the instance of the loaded `Activity` instead of the type. Otherwise the `WorkflowManager` will instantiate a new `DynamicActivity` without any Properties, Variables and Arguments.
+* When invoking an `Activity` based on its XAML definition the `Activity` first has to be loaded using `ActivityXamlServices`. Loading the `Activity` results in a instance of type `DynamicActivity`. This means, that the type of the `Activity` cannot be determined anymore. Because of that `WorkflowManagers` invoke method has to be called by passing the instance of the loaded `Activity` instead of its type. Otherwise the `WorkflowManager` will instantiate a new `DynamicActivity` without any Properties, Variables and Arguments.
 
 # Useful Links
 
