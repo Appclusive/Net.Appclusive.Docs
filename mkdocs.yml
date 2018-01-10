@@ -25,6 +25,7 @@ pages:
 - Security:
     - Index: Security/index.md
     - Authentication: Security/Authentication.md
+    - Impersonation: Security/Impersonation.md
 - Installation:
     - Index: Installation/index.md
     - Installation: Installation/Installation.md
