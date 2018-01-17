@@ -1,3 +1,21 @@
+# 2018-01-17
+
+## Troubleshooting
+
+* added information about Microsoft Azure Active Directory error
+
+## Managers
+
+* aligned the documentation of the managers to the current state of implementation
+
+## Impersonation
+
+* documentation for [Impersonation](Security/Impersonation/)
+
+## PowerShell Client
+
+We released version 4.0.3 of our [Appclusive PowerShell Client](Clients/PowerShell/)
+
 # 2017-04-19
 
 ## Approval Process
