@@ -1,4 +1,4 @@
-Appclusive (R) provides a Microsoft PowerShell module which you can use to manage and work with the Appclusive API. This module is built on the [C# .NET Client](CSharpDotNet/) and acts as a convenience wrapper. For more information about the [C# .NET Client](CSharpDotNet/) see the documentation [.Net C# Client](../CSharpDotNet/).
+Appclusive (R) provides a Microsoft PowerShell module which you can use to manage and work with the Appclusive API. This module is built on the [C# .NET Client](CSharpDotNet/) and acts as a convenience wrapper. For more information about the [C# .NET Client](CSharpDotNet/) see the documentation of [C# .NET Client](CSharpDotNet/).
 
 # Installation
 
