@@ -22,7 +22,7 @@ OrderManager->JobManager: Create
 JobManager->OrderManager: Job  
 OrderManager->OrderManager: Create
 
-loop For every CartItem  
+loop For every CartItem
 - OrderManager->CatalogueItemManager: Get(cartItem.CatalogueItemId)  
 - CatalogueItemManager->OrderManager: CatalogueItem  
 - OrderManager->BlueprintManager: Get(catalogueItem.BlueprintId)  
