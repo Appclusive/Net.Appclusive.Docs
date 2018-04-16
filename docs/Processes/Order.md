@@ -34,14 +34,15 @@ end
 
 OrderManager->CartManager: Delete  
 
-loop For every OrderItem  
+loop For every OrderItem
+
 - OrderManager->BlueprintManager: Get(orderItem.BlueprintId)  
 - BlueprintManager->OrderManager: Blueprint  
 - OrderManager->ModelManager: Get(blueprint.ModelId)  
 - ModelManager->OrderManager: Model  
 - loop For every configuration entry  
-    - OrderManager->ModelAttributeManager: Get(configEntry.Id)  
-    - ModelAttributeManager->OrderManager: ModelAttribute  
+      - OrderManager->ModelAttributeManager: Get(configEntry.Id)  
+      - ModelAttributeManager->OrderManager: ModelAttribute  
 - end  
 - OrderManager->WorkflowManager: Invoke(activity, inputs)  
 end  
