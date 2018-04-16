@@ -14,7 +14,7 @@ pages:
     - Order: Processes/Order.md
 - Endpoints:
     - Index: Endpoints/index.md
-    - API: Endpoints/API.md
+    - API: Endpoints/Api.md
     - Managers: Endpoints/Managers.md
     - Catalogue:
         - Blueprint: Endpoints/Core/Catalogue/Blueprint.md
