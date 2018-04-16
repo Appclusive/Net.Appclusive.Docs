@@ -1,19 +1,18 @@
 # Order Process
 
-Client->Api: GET Catalogue
-
+Client->Api: GET Catalogue\s\s
 Api->Client: Catalogue
 
-Client->Api: GET CatalogueItem
+Client->Api: GET CatalogueItem\s\s
 Api->Client: CatalogueItem
 
-Client->Api: POST Cart (Name, Description)
+Client->Api: POST Cart (Name, Description)\s\s
 Api->Client: Cart
 
-Client->Api: POST CartItem
-note right of Client: Configuration, Name, CartId, CatalogueItemId
-note right of Client: !!!Validate Configuration!!!
-Api->Client: CartItem
+Client->Api: POST CartItem\s\s
+_note right of Client: Configuration, Name, CartId, CatalogueItemId_\s\s
+_note right of Client: !!!Validate Configuration!!!_\s\s
+Api->Client: CartItem\s\s
 
 Client->Api: POST Orders/Create (CartId)
 Api->OrderManager: Create(CartId)
