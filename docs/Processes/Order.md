@@ -12,7 +12,7 @@ Api->Client: Cart
 Client->Api: POST CartItem  
 _note right of Client: Configuration, Name, CartId, CatalogueItemId_  
 _note right of Client: !!!Validate Configuration!!!_  
-Api->Client: CartItem  
+Api->Client: CartItem
 
 Client->Api: POST Orders/Create (CartId)  
 Api->OrderManager: Create(CartId)  
@@ -23,16 +23,18 @@ JobManager->OrderManager: Job
 OrderManager->OrderManager: Create
 
 loop For every CartItem
+
 - OrderManager->CatalogueItemManager: Get(cartItem.CatalogueItemId)  
 - CatalogueItemManager->OrderManager: CatalogueItem  
 - OrderManager->BlueprintManager: Get(catalogueItem.BlueprintId)  
 - BlueprintManager->OrderManager: Blueprint  
 - OrderManager->JobManager: Create  
 - JobManager->OrderManager: Job  
-- OrderManager->OrderItemManager: Create  
+- OrderManager->OrderItemManager: Create
+
 end
 
-OrderManager->CartManager: Delete  
+OrderManager->CartManager: Delete
 
 loop For every OrderItem
 
@@ -44,7 +46,8 @@ loop For every OrderItem
       - OrderManager->ModelAttributeManager: Get(configEntry.Id)  
       - ModelAttributeManager->OrderManager: ModelAttribute  
 - end  
-- OrderManager->WorkflowManager: Invoke(activity, inputs)  
+- OrderManager->WorkflowManager: Invoke(activity, inputs)
+
 end  
 OrderManager->Api: Job  
 Api->Client: Job
@@ -52,10 +55,11 @@ Api->Client: Job
 WorkflowManager->Activity: Invoke(inputs)  
 Activity->Queue: SendMessage(inputs)
 
+loop
 
-loop  
 - Activity->Queue: Check for message  
-- Queue->Activity: Message  
+- Queue->Activity: Message
+
 end
 
 MessageProcessor->Queue: GetMessage  
