@@ -40,8 +40,8 @@ loop For every OrderItem
     - OrderManager->ModelManager: Get(blueprint.ModelId)  
     - ModelManager->OrderManager: Model  
     - loop For every configuration entry  
-        - OrderManager->ModelAttributeManager: Get(configEntry.Id)  
-        - ModelAttributeManager->OrderManager: ModelAttribute  
+          - OrderManager->ModelAttributeManager: Get(configEntry.Id)  
+          - ModelAttributeManager->OrderManager: ModelAttribute  
     - end  
     - OrderManager->WorkflowManager: Invoke(activity, inputs)  
 end  
