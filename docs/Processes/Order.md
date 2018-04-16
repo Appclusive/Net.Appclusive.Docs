@@ -1,18 +1,18 @@
 # Order Process
 
-Client->Api: GET Catalogue  
-Api->Client: Catalogue
+    Client->Api: GET Catalogue  
+    Api->Client: Catalogue
 
-Client->Api: GET CatalogueItem  
-Api->Client: CatalogueItem
+    Client->Api: GET CatalogueItem  
+    Api->Client: CatalogueItem
 
-Client->Api: POST Cart (Name, Description)  
-Api->Client: Cart
+    Client->Api: POST Cart (Name, Description)  
+    Api->Client: Cart
 
-Client->Api: POST CartItem  
-_note right of Client: Configuration, Name, CartId, CatalogueItemId_  
-_note right of Client: !!!Validate Configuration!!!_  
-Api->Client: CartItem  
+    Client->Api: POST CartItem  
+    _note right of Client: Configuration, Name, CartId, CatalogueItemId_  
+    _note right of Client: !!!Validate Configuration!!!_  
+    Api->Client: CartItem  
 
 Client->Api: POST Orders/Create (CartId)  
 Api->OrderManager: Create(CartId)  
@@ -23,7 +23,6 @@ JobManager->OrderManager: Job
 OrderManager->OrderManager: Create
 
 loop For every CartItem  
-
     OrderManager->CatalogueItemManager: Get(cartItem.CatalogueItemId)  
     CatalogueItemManager->OrderManager: CatalogueItem  
     OrderManager->BlueprintManager: Get(catalogueItem.BlueprintId)  
