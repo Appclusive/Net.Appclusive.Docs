@@ -6,10 +6,10 @@ Appclusive exposes its functionality via an [ODATA v3](http://www.odata.org/docu
 
 # Authentication
 
-Appclusive supports different authentication mechanisms independent of the underlying transport protocol which can be extended by a plugins. Currently the following authentication means are available:
+Appclusive supports different authentication mechanisms independent of the underlying transport protocol which can be extended by plugins. Currently the following authentication means are available:
 
 * Windows Integrated, ActiveDirectory  (via `Authorization` header)
-* [JWT](https://jwt.io/)  (via separate user defined HTTP header)
+* Basic (via `Authorization` header `Basic` with Base64 encoded username and password)
 * [OAUTH2](https://oauth.net/2/) (via `Authorization` header with `Bearer` token)
 
 Appclusive does not act as an Identity Provider but relies on external systems to provide that functionality.
