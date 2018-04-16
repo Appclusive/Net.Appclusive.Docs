@@ -1,6 +1,7 @@
-title Order Process
+# Order Process
 
 Client->Api: GET Catalogue
+
 Api->Client: Catalogue
 
 Client->Api: GET CatalogueItem
